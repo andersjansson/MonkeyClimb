@@ -3,13 +3,13 @@ using System.Collections;
 
 namespace Controllers.Menus
 {
-	public class MainMenuController : MonoBehaviour {
-
+	public class PlayMenuController : MonoBehaviour {
+		
 		// Use this for initialization
 		void Start () {
-		
+			
 		}
-
+		
 		void OnGUI()
 		{
 			const int buttonWidth = 84;
@@ -32,21 +32,21 @@ namespace Controllers.Menus
 				);
 			
 			// Draw a button to start the game
-			if(GUI.Button(buttonStart,"Play"))
+			if(GUI.Button(buttonStart,"Singleplayer"))
 			{
-				Application.LoadLevel("PlayMenu");
+				Application.LoadLevel("LevelMenu");
 			}
 			
 			// Draw a button to quit the game
-			if(GUI.Button(buttonQuit,"Quit"))
+			if(GUI.Button(buttonQuit,"Back"))
 			{
-				Application.Quit();
+				Application.LoadLevel("MainMenu");
 			}
 		}
 		
 		// Update is called once per frame
 		void Update () {
-		
+			
 		}
 	}
 }
