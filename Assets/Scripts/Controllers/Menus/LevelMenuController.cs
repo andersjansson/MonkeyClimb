@@ -11,7 +11,7 @@ namespace Controllers.Menus
 			float buttonWidth = Screen.width;
 			float buttonHeight = (Screen.height/3);
 			
-			Rect levelButton = new Rect(0,0,buttonWidth,buttonHeight);
+			Rect levelButton = new Rect(0,100,buttonWidth,buttonHeight);
 			
 			// Draw a button to start the game
 			if(GUI.Button(levelButton,"Jungle Level"))
