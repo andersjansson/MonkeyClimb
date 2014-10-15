@@ -6,13 +6,19 @@ namespace Controllers.Menus
 	public class MainMenuController : MonoBehaviour {
 
 		private GameObject buttonPlay;
+		private GameObject buttonQuit;
+
 		private ButtonController buttonPlayController;
+		private ButtonController buttonQuitController;
 
 		// Use this for initialization
 		void Start () {
 		
 			this.buttonPlay = GameObject.Find("ButtonPlay");
 			this.buttonPlayController = buttonPlay.GetComponent<ButtonController>();
+
+			this.buttonQuit = GameObject.Find("ButtonQuit");
+			this.buttonQuitController = buttonQuit.GetComponent<ButtonController>();
 		}
 
 		void OnGUI()
@@ -26,10 +32,10 @@ namespace Controllers.Menus
 			}
 			
 			// Draw a button to quit the game
-			//if(GUI.Button(buttonQuit,"Quit"))
-			//{
-			//	Application.Quit();
-			//}
+			if(GUI.Button(buttonQuitController.Button,buttonQuitController.title,buttonQuitController.style))
+			{
+				Application.Quit();
+			}
 		}
 		
 		// Update is called once per frame
