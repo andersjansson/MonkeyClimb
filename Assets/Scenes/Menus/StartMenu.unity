@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: .5, y: 1}
-  fontSizeRatio: 30
+  fontSizeRatio: .100000001
 --- !u!1 &519615083
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: .5, y: .5}
-  fontSizeRatio: 40
+  fontSizeRatio: .100000001
 --- !u!132 &1109669594
 GUIText:
   m_ObjectHideFlags: 0

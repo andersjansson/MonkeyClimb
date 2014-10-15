@@ -11,13 +11,13 @@ public class FontScaler : MonoBehaviour {
 	/// <summary>
 	/// Font Size ratio in float.
 	/// </summary>
-	public float fontSizeRatio = 10;
+	public float fontSizeRatio = 0.1f;
 
 	//----------------------------------------------------------------------------
 	
 	void OnGUI()
 	{
-		float finalSize = Mathf.Min(Screen.width, Screen.height) / this.fontSizeRatio;
+		float finalSize = Mathf.Min(Screen.width, Screen.height) * this.fontSizeRatio;
 
 		guiText.fontSize = (int) finalSize;
 		guiText.pixelOffset = new Vector2( this.offset.x * Screen.width, this.offset.y * Screen.height);
