@@ -23,10 +23,10 @@ namespace Utilities
 			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(resizeRatio.x, resizeRatio.y, 1.0f));
 		}
 
-		public static ScaledTextureSize RectScale(float originalWidth, float originalHeight, Vector2 scaleRatio)
+		public static ScaledTextureSize RectScaleSize(float originalWidth, float originalHeight, Vector2 scaleRatio)
 		{
-			float screenHeight 		= (float) Screen.height;
-			float screenWidth 		= (float) Screen.width;
+			float screenHeight 		= Camera.main.pixelWidth;
+			float screenWidth 		= Camera.main.pixelHeight;
 			
 			float screenAspectRatio = (screenWidth / screenHeight);
 			float textureAspectRatio = (originalWidth / originalHeight);
@@ -50,8 +50,8 @@ namespace Utilities
 			scaledWidth = scaledWidth * scaleRatio.x;
 			scaledHeight = scaledHeight * scaleRatio.y;
 			
-			var scaledTexture = new ScaledTextureSize(scaledWidth,scaledHeight);
-			return scaledTexture;
+			var size = new ScaledTextureSize(scaledWidth,scaledHeight);
+			return size;
 		}
 
 

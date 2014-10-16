@@ -39,8 +39,12 @@ namespace Controllers.Menus
 		}
 		
 		// Update is called once per frame
-		void Update () {
-		
+		void Update ()
+		{
+			if (Input.GetKey (KeyCode.Escape))
+			{
+				Application.Quit();
+			}
 		}
 	}
 }

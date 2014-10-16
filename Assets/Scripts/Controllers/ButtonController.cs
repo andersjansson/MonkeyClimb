@@ -16,7 +16,7 @@ namespace Controllers
 
 		void OnGUI()
 		{
-			ScaledTextureSize scaled = style.normal.background.Scale(this.transform.localScale);
+			ScaledTextureSize scaled = style.normal.background.GetScaleSize(this.transform.localScale);
 
 			float x = this.transform.position.x * ((float)(Screen.width)  - scaled.Width);
 			float y = this.transform.position.y * ((float)(Screen.height) - scaled.Height);

@@ -17,9 +17,9 @@ public class FontScaler : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		float finalSize = Mathf.Min(Screen.width, Screen.height) * this.fontSizeRatio;
+		float finalSize = Mathf.Min(Camera.main.pixelWidth, Camera.main.pixelHeight) * this.fontSizeRatio;
 
 		guiText.fontSize = (int) finalSize;
-		guiText.pixelOffset = new Vector2( this.offset.x * Screen.width, this.offset.y * Screen.height);
+		guiText.pixelOffset = new Vector2( this.offset.x * Camera.main.pixelWidth, this.offset.y * Camera.main.pixelHeight);
 	}
 }
