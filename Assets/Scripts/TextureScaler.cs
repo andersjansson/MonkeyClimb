@@ -13,12 +13,13 @@ public class TextureScaler : MonoBehaviour {
 
 	void Awake()
 	{
-		this.scaledSize = GUIScale.RectScaleSize(this.orginalWidth,this.orginalHeight,this.scaleRatio);
 		this.transform.localScale = new Vector3(0, 0, 0);
 	}
 
 	void OnGUI()
 	{
+		this.scaledSize = GUIScale.RectScaleSize(this.orginalWidth,this.orginalHeight,this.scaleRatio);
+
 		float x = -(scaledSize.Width / 2);
 		float y = -(scaledSize.Height / 2);
 
