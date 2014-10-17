@@ -217,7 +217,7 @@ GameObject:
   m_Layer: 0
   m_Name: ButtonQuit
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -293,6 +293,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  textOffsetRatio: {x: 0, y: .280000001}
 --- !u!4 &426865994
 Transform:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ GameObject:
   m_Layer: 0
   m_Name: ButtonPlay
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -630,6 +631,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  textOffsetRatio: {x: 0, y: 0}
 --- !u!1001 &1937320096
 Prefab:
   m_ObjectHideFlags: 0
