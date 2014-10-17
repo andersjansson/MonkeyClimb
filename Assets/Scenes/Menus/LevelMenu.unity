@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: .5, y: .975000024}
-  fontSizeRatio: 10
+  fontSizeRatio: .140000001
 --- !u!132 &892131054
 GUIText:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ GUIText:
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278215428
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &900601251
@@ -536,7 +536,7 @@ Transform:
   m_GameObject: {fileID: 2038749719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .5, y: .5, z: 0}
-  m_LocalScale: {x: 1, y: .800000012, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 900601252}
   m_RootOrder: 2
@@ -556,17 +556,17 @@ MonoBehaviour:
   style:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 2800000, guid: bfaa975f7a65a854e885bb40bf725bdb, type: 3}
+      m_Background: {fileID: 2800000, guid: 92c094a65884a5546b79b7e27f8ad3ae, type: 3}
       m_TextColor: {r: .45588237, g: .348985851, b: 0, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Active:
-      m_Background: {fileID: 2800000, guid: 16f7cdc2416f4e04096645565b98e70d, type: 3}
+      m_Background: {fileID: 2800000, guid: 5c1534aa3d155304ea7db18a5071eea5, type: 3}
       m_TextColor: {r: .454901963, g: .349019617, b: 0, a: 1}
     m_Focused:
-      m_Background: {fileID: 2800000, guid: 16f7cdc2416f4e04096645565b98e70d, type: 3}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 0}
+      m_TextColor: {r: .454901963, g: .349019617, b: 0, a: 1}
     m_OnNormal:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -574,7 +574,7 @@ MonoBehaviour:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_OnActive:
-      m_Background: {fileID: 2800000, guid: 16f7cdc2416f4e04096645565b98e70d, type: 3}
+      m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_OnFocused:
       m_Background: {fileID: 0}

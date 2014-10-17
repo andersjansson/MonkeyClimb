@@ -25,8 +25,8 @@ namespace Utilities
 
 		public static ScaledTextureSize RectScaleSize(float originalWidth, float originalHeight, Vector2 scaleRatio)
 		{
-			float screenHeight 		= Camera.main.pixelWidth;
-			float screenWidth 		= Camera.main.pixelHeight;
+			float screenHeight 		= Camera.main.pixelHeight;
+			float screenWidth 		= Camera.main.pixelWidth;
 			
 			float screenAspectRatio = (screenWidth / screenHeight);
 			float textureAspectRatio = (originalWidth / originalHeight);
