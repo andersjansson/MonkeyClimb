@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orginalWidth: 1024
   orginalHeight: 567
-  scaleRatio: {x: .400000006, y: .400000006}
+  scaleRatio: {x: .300000012, y: .300000012}
 --- !u!131 &251011268
 GUITexture:
   m_ObjectHideFlags: 0
@@ -673,11 +673,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b545c32809637c94fa9fdb67596df0f5, type: 2}
       propertyPath: scaleRatio.x
-      value: .400000006
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b545c32809637c94fa9fdb67596df0f5, type: 2}
       propertyPath: scaleRatio.y
-      value: .400000006
+      value: .300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b545c32809637c94fa9fdb67596df0f5, type: 2}
