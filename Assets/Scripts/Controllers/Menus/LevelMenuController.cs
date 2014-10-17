@@ -4,20 +4,26 @@ using System.Collections;
 namespace Controllers.Menus
 {
 	public class LevelMenuController : MonoBehaviour {
-		
-		public Texture btnTexture;
-		
+
+		private GameObject buttonJungle;
+
+		private ButtonController buttonJungleController;
+
+		void Start(){
+			this.buttonJungle = GameObject.Find("ButtonJungle");
+			this.buttonJungleController = buttonJungle.GetComponent<ButtonController>();
+		}
+
 		void OnGUI() {
 			float buttonWidth = Screen.width;
-			float buttonHeight = (Screen.height/3);
+			float buttonHeight = (Screen.height/4);
 			
 			Rect levelButton = new Rect(0,100,buttonWidth,buttonHeight);
 			
 			// Draw a button to start the game
-			if(GUI.Button(levelButton,"Jungle Level"))
+			if(GUI.Button(buttonJungleController.Button,buttonJungleController.title,buttonJungleController.style))
 			{
-				Debug.Log("Clicked the button with an image");
-				//Application.LoadLevel("SinglePlayer");
+				Application.LoadLevel("PlayMenu");
 			}
 			/*
 			if (!btnTexture) {
