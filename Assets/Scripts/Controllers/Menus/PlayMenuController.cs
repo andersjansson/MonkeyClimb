@@ -22,6 +22,8 @@ namespace Controllers.Menus
 		
 		void OnGUI()
 		{
+			buttonBack.transform.position = new Vector2(buttonBack.transform.position.x,buttonSingleplayerController.GetHeigthRatio());
+
 			// Draw a button to start the game
 			if(GUI.Button(buttonSingleplayerController.Button,buttonSingleplayerController.title,buttonSingleplayerController.style))
 			{

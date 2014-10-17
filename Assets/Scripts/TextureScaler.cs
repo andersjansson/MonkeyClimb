@@ -2,14 +2,13 @@
 using System.Collections;
 using Utilities;
 using Extensions;
+using Models;
 
 public class TextureScaler : MonoBehaviour {
 
 	public float orginalWidth;
 	public float orginalHeight;
 	public Vector2 scaleRatio = new Vector2 (0.5f, 0.5f);
-
-	private ScaledTextureSize scaledSize;
 
 	void Awake()
 	{
@@ -18,7 +17,7 @@ public class TextureScaler : MonoBehaviour {
 
 	void OnGUI()
 	{
-		this.scaledSize = GUIScale.RectScaleSize(this.orginalWidth,this.orginalHeight,this.scaleRatio);
+		RectSize scaledSize = GUIScale.RectScaleSize(this.orginalWidth,this.orginalHeight,this.scaleRatio);
 
 		float x = -(scaledSize.Width / 2);
 		float y = -(scaledSize.Height / 2);

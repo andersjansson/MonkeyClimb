@@ -5,46 +5,49 @@ namespace Controllers.Main
 {
 	public class CameraController : MonoBehaviour
 	{
-		void Start () 
+		public float targetAspect = 9.0f / 16.0f;
+
+		private Camera cam;
+		private float currentWindowAspect;
+
+		void Start() 
 		{
-			// set the desired aspect ratio (the values in this example are
-			// hard-coded for 16:9, but you could make them into public
-			// variables instead so you can set them at design time)
-			float targetaspect = 9.0f / 16.0f;
-			
-			// determine the game window's current aspect ratio
-			float windowaspect = (float)Screen.width / (float)Screen.height;
-			
-			// current viewport height should be scaled by this amount
-			float scaleheight = windowaspect / targetaspect;
-			
-			// obtain camera component so we can modify its viewport
-			Camera camera = GetComponent<Camera>();
-			
-			// if scaled height is less than current height, add letterbox
-			if (scaleheight < 1.0f)
-			{  
-				Rect rect = camera.rect;
-				
-				rect.width = 1.0f;
-				rect.height = scaleheight;
-				rect.x = 0;
-				rect.y = (1.0f - scaleheight) / 2.0f;
-				
-				camera.rect = rect;
-			}
-			else // add pillarbox
+			this.cam = this.GetComponent<Camera>();
+		}
+
+		void Update()
+		{
+			float windowAspect = (float)Screen.width / (float)Screen.height;
+			if(this.currentWindowAspect != windowAspect)
 			{
-				float scalewidth = 1.0f / scaleheight;
-				
-				Rect rect = camera.rect;
-				
-				rect.width = scalewidth;
-				rect.height = 1.0f;
-				rect.x = (1.0f - scalewidth) / 2.0f;
-				rect.y = 0;
-				
-				camera.rect = rect;
+				this.currentWindowAspect = windowAspect;
+				float scaleHeight = windowAspect / this.targetAspect;
+			
+				// if scaled height is less than current height, add letterbox
+				if (scaleHeight < 1.0f)
+				{  
+					Rect rect = cam.rect;
+					
+					rect.width = 1.0f;
+					rect.height = scaleHeight;
+					rect.x = 0;
+					rect.y = (1.0f - scaleHeight) / 2.0f;
+					
+					cam.rect = rect;
+				}
+				else // add pillarbox
+				{
+					float scaleWidth = 1.0f / scaleHeight;
+					
+					Rect rect = cam.rect;
+					
+					rect.width = scaleWidth;
+					rect.height = 1.0f;
+					rect.x = (1.0f - scaleWidth) / 2.0f;
+					rect.y = 0;
+					
+					cam.rect = rect;
+				}
 			}
 		}
 	}

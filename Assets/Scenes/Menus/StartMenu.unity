@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab943d1f0a2a364ba029cd3d4b2adbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetAspect: .5625
 --- !u!81 &1362624224
 AudioListener:
   m_ObjectHideFlags: 0

@@ -23,19 +23,19 @@ namespace Controllers.Menus
 
 		void OnGUI()
 		{
-
-			
 			// Draw a button to start the game
-			if(GUI.Button(buttonPlayController.Button,buttonPlayController.title,buttonPlayController.style))
+			if(GUI.Button(this.buttonPlayController.Button,this.buttonPlayController.title,this.buttonPlayController.style))
 			{
 				Application.LoadLevel("PlayMenu");
 			}
 			
 			// Draw a button to quit the game
-			if(GUI.Button(buttonQuitController.Button,buttonQuitController.title,buttonQuitController.style))
+			if(GUI.Button(this.buttonQuitController.Button,this.buttonQuitController.title,this.buttonQuitController.style))
 			{
 				Application.Quit();
 			}
+
+			this.buttonQuit.gameObject.transform.position = new Vector2(buttonQuit.transform.position.x,this.buttonPlayController.GetHeigthRatio());
 		}
 		
 		// Update is called once per frame

@@ -1,20 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Models;
 
 namespace Utilities
 {
-	public class ScaledTextureSize
-	{
-		public float Width {get;set;}
-		public float Height {get;set;}
-		
-		public ScaledTextureSize(float width, float height)
-		{
-			this.Width 	= width;
-			this.Height = height;
-		}
-	}
-
 	public static class GUIScale
 	{
 		public static void AutoResize(int screenWidth, int screenHeight)
@@ -23,7 +12,7 @@ namespace Utilities
 			GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(resizeRatio.x, resizeRatio.y, 1.0f));
 		}
 
-		public static ScaledTextureSize RectScaleSize(float originalWidth, float originalHeight, Vector2 scaleRatio)
+		public static RectSize RectScaleSize(float originalWidth, float originalHeight, Vector2 scaleRatio)
 		{
 			float screenHeight 		= Camera.main.pixelHeight;
 			float screenWidth 		= Camera.main.pixelWidth;
@@ -50,7 +39,7 @@ namespace Utilities
 			scaledWidth = scaledWidth * scaleRatio.x;
 			scaledHeight = scaledHeight * scaleRatio.y;
 			
-			var size = new ScaledTextureSize(scaledWidth,scaledHeight);
+			var size = new RectSize(scaledWidth,scaledHeight);
 			return size;
 		}
 
