@@ -675,7 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orginalWidth: 512
   orginalHeight: 363
-  scaleRatio: {x: .649999976, y: .649999976}
+  scaleRatio: {x: .300000012, y: .300000012}
 --- !u!1 &1752581144
 GameObject:
   m_ObjectHideFlags: 0
