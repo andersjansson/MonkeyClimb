@@ -82,7 +82,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 874333}
+  - 114: {fileID: 874336}
   - 114: {fileID: 874334}
+  - 114: {fileID: 874335}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: GameController
@@ -111,6 +113,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6389f36685243eb46a804c71bfa146f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &874335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09d573324b1bac4eba6aff2fd914805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &874336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8345f3d1b3e0a49bd29c0283cf12e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &43382213
@@ -271,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab943d1f0a2a364ba029cd3d4b2adbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetAspect: .5625
 --- !u!81 &1819182993
 AudioListener:
   m_ObjectHideFlags: 0

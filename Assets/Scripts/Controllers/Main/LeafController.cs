@@ -19,7 +19,6 @@ namespace Controllers.Main
 			this.moveController = this.GetComponent<MovementController>();
 			this.GetComponent<SpriteRenderer>().color = new Color(1f, Random.Range(0.7f,1f), 1f);
 		}
-		
 
 		void Update ()
 		{

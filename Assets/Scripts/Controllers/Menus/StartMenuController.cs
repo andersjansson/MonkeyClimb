@@ -1,22 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Utilities;
 
 namespace Controllers.Menus
 {
-	public class StartMenuController : MonoBehaviour {
-
-
-		void Start () {
-		
-		}
-
-		void OnGUI()
+	public class StartMenuController : MonoBehaviour
+	{
+		void Start()
 		{
-			//Utilities.GUIScale.AutoResize(1920, 1200);
+	
 		}
 
-		void Update () {
-
+		void Update ()
+		{
 			bool continueButton = false;
 
 			continueButton |= Input.GetButtonDown("Fire1");
@@ -25,9 +21,8 @@ namespace Controllers.Menus
 
 			if(continueButton)
 			{
-				Application.LoadLevel("MainMenu");
+				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("MainMenu"); } );
 			}
-		
 		}
 	}
 }

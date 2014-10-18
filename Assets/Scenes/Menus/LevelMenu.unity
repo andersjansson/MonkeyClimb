@@ -82,7 +82,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 874333}
+  - 114: {fileID: 874336}
   - 114: {fileID: 874334}
+  - 114: {fileID: 874335}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: GameController
@@ -111,6 +113,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7761ccbfb20f9b540aa34b0eb899fece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &874335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09d573324b1bac4eba6aff2fd914805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &874336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8345f3d1b3e0a49bd29c0283cf12e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &293641061
@@ -145,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab943d1f0a2a364ba029cd3d4b2adbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetAspect: .5625
 --- !u!81 &293641063
 AudioListener:
   m_ObjectHideFlags: 0
@@ -554,6 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Welcome to the Jungle
   fontSizeRatio: .200000003
+  textOffsetRatio: {x: 0, y: 0}
   style:
     m_Name: 
     m_Normal:
@@ -613,7 +639,6 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  textOffsetRatio: {x: 0, y: 0}
 --- !u!1 &2078607479
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Back
   fontSizeRatio: .200000003
+  textOffsetRatio: {x: 0, y: .280000001}
   style:
     m_Name: 
     m_Normal:
@@ -764,4 +790,3 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  textOffsetRatio: {x: 0, y: .280000001}

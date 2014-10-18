@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Utilities;
+using Controllers.Main;
 
 namespace Controllers.Menus
 {
@@ -11,14 +13,16 @@ namespace Controllers.Menus
 		private ButtonController buttonPlayController;
 		private ButtonController buttonQuitController;
 
-		// Use this for initialization
-		void Start () {
-		
+		void Start ()
+		{
 			this.buttonPlay = GameObject.Find("ButtonPlay");
 			this.buttonPlayController = buttonPlay.GetComponent<ButtonController>();
 
 			this.buttonQuit = GameObject.Find("ButtonQuit");
 			this.buttonQuitController = buttonQuit.GetComponent<ButtonController>();
+
+			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
+			AudioController.LoopMenuMusic();
 		}
 
 		void OnGUI()
@@ -26,7 +30,8 @@ namespace Controllers.Menus
 			// Draw a button to start the game
 			if(GUI.Button(this.buttonPlayController.Button,this.buttonPlayController.title,this.buttonPlayController.style))
 			{
-				Application.LoadLevel("PlayMenu");
+				AudioController.PlayButtonClick();
+				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("PlayMenu"); } );
 			}
 			
 			// Draw a button to quit the game

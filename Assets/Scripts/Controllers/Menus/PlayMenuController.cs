@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Controllers.Main;
+using Utilities;
 
 namespace Controllers.Menus
 {
@@ -18,6 +20,8 @@ namespace Controllers.Menus
 			
 			this.buttonBack = GameObject.Find("ButtonBack");
 			this.buttonBackController = buttonBack.GetComponent<ButtonController>();
+
+			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 		}
 		
 		void OnGUI()
@@ -27,13 +31,15 @@ namespace Controllers.Menus
 			// Draw a button to start the game
 			if(GUI.Button(buttonSingleplayerController.Button,buttonSingleplayerController.title,buttonSingleplayerController.style))
 			{
-				Application.LoadLevel("LevelMenu");
+				AudioController.PlayButtonClick();
+				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("LevelMenu"); } );
 			}
 			
 			// Draw a button to quit the game
 			if(GUI.Button(buttonBackController.Button,buttonBackController.title,buttonBackController.style))
 			{
-				Application.LoadLevel("MainMenu");
+				AudioController.PlayButtonClick();
+				this.GoBack();
 			}
 		}
 
@@ -41,8 +47,13 @@ namespace Controllers.Menus
 		{
 			if (Input.GetKey (KeyCode.Escape))
 			{
-				Application.LoadLevel("MainMenu");
+				this.GoBack();
 			}
+		}
+
+		private void GoBack()
+		{
+			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("MainMenu"); } );
 		}
 	}
 }
