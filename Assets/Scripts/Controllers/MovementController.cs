@@ -18,16 +18,25 @@ namespace Controllers
 		/// </summary>
 		public Vector2 direction = new Vector2(-1, 0);
 
+		/// <summary>
+		/// Enable default rigidbody gravity. (no fall speed)
+		/// </summary>
+		public bool gravity = true;
+
 		//----------------------------------------------------------------------------
 		
 		private Vector2 movement;
 
 		void Update()
 		{
+			float fallVelocity = this.speed.y * this.direction.y;
+			if(this.gravity)
+				fallVelocity = this.rigidbody2D.velocity.y;
+
 			this.movement = new Vector2
 			(
 				this.speed.x * this.direction.x,
-				this.speed.y * this.direction.y
+				fallVelocity
 			);
 		}
 		

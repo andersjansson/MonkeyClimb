@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Utilities;
+using System.Threading;
 
 namespace Controllers
 {
@@ -14,6 +15,11 @@ namespace Controllers
 		public Transform spawnPrefab;
 
 		/// <summary>
+		/// The minimum spawn rate in seconds.
+		/// </summary>
+		public float minSpawnRate = 0f;
+
+		/// <summary>
 		/// The spawn rate in seconds.
 		/// </summary>
 		public float spawnRate = 3f;
@@ -22,6 +28,7 @@ namespace Controllers
 		/// Max amount of alive objects.
 		/// </summary>
 		public int maxCount = 1;
+		
 
 		//----------------------------------------------------------------------------
 
@@ -30,7 +37,7 @@ namespace Controllers
 
 		void Start()
 		{
-			spawner = this.gameObject.DoSomethingLater(this.Spawn,this.spawnRate);
+			spawner = this.gameObject.DoSomethingLater(this.Spawn,this.randomSpawnRate());
 			this.spawnedObjects = new List<Transform>();
 		}
 
@@ -46,6 +53,17 @@ namespace Controllers
 			}
 
 		}
+
+		private float randomSpawnRate()
+		{
+			float spawnRate = this.spawnRate;
+			if(this.minSpawnRate > 0f)
+			{
+				spawnRate = Random.Range(this.minSpawnRate,this.spawnRate);
+			}
+
+			return spawnRate;
+		}
 		
 		private void Spawn()
 		{
@@ -58,7 +76,7 @@ namespace Controllers
 				this.spawnedObjects.Add(spawnedTransform);
 			}
 
-			spawner = this.gameObject.DoSomethingLater(this.Spawn,this.spawnRate);
+			spawner = this.gameObject.DoSomethingLater(this.Spawn,this.randomSpawnRate());
 		}
 	}
 }
