@@ -278,7 +278,7 @@ GameObject:
   - 132: {fileID: 892131054}
   - 114: {fileID: 892131053}
   m_Layer: 0
-  m_Name: Text Title
+  m_Name: TextTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 900601252}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &892131053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,13 +323,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 7e9fe2f869b8c96419dad0b895c72684, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278220406
+    rgba: 4278221363
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &900601251
@@ -357,7 +357,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1594597070}
   - {fileID: 892131052}
   - {fileID: 2038749720}
   - {fileID: 2112647564}
@@ -407,34 +406,6 @@ Prefab:
   m_RootGameObject: {fileID: 293641061}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1594597069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1594597070}
-  m_Layer: 0
-  m_Name: Button Textures
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1594597070
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1594597069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1857366347}
-  m_Father: {fileID: 900601252}
-  m_RootOrder: 0
 --- !u!1 &1663278077
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,53 +462,6 @@ Transform:
   - {fileID: 2078607480}
   m_Father: {fileID: 1663278078}
   m_RootOrder: 0
---- !u!1 &1857366346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1857366347}
-  - 131: {fileID: 1857366348}
-  m_Layer: 0
-  m_Name: Jungle Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1857366347
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1857366346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: 1, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1594597070}
-  m_RootOrder: 0
---- !u!131 &1857366348
-GUITexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1857366346}
-  m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 3b6c5b90d9ac4fb4f9ad7236d9883d04, type: 3}
-  m_Color: {r: .5, g: .5, b: .5, a: .5}
-  m_PixelInset:
-    serializedVersion: 2
-    x: -512
-    y: -272
-    width: 1024
-    height: 170
-  m_LeftBorder: 0
-  m_RightBorder: 0
-  m_TopBorder: 0
-  m_BottomBorder: 0
 --- !u!1 &2038749719
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 900601252}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &2038749721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,10 +637,10 @@ Transform:
   m_GameObject: {fileID: 2112647563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .5, y: .959999979, z: 0}
-  m_LocalScale: {x: .400000006, y: .400000006, z: 1}
+  m_LocalScale: {x: .550000012, y: .600000024, z: 1}
   m_Children: []
   m_Father: {fileID: 900601252}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &2112647565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,22 +653,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Back
-  fontSizeRatio: .200000003
-  textOffsetRatio: {x: 0, y: .280000001}
+  fontSizeRatio: .839999974
+  textOffsetRatio: {x: 0, y: 0}
   style:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 2800000, guid: 34bf9ab9833af4843ae00a903452c5c5, type: 3}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: 3fa68252ca79f7e4abd3ef7219dc2bc6, type: 3}
+      m_TextColor: {r: 1, g: 1, b: 0, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Active:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: deed605313d66e34aae963b39e08a6f1, type: 3}
+      m_TextColor: {r: 1, g: 1, b: 0, a: 1}
     m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: deed605313d66e34aae963b39e08a6f1, type: 3}
+      m_TextColor: {r: 1, g: 1, b: 0, a: 1}
     m_OnNormal:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -777,7 +701,7 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 0}
+    m_Font: {fileID: 12800000, guid: 7e9fe2f869b8c96419dad0b895c72684, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_Alignment: 4
@@ -785,7 +709,7 @@ MonoBehaviour:
     m_RichText: 1
     m_TextClipping: 0
     m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 22}
+    m_ContentOffset: {x: 0, y: 0}
     m_FixedWidth: 0
     m_FixedHeight: 0
     m_StretchWidth: 1

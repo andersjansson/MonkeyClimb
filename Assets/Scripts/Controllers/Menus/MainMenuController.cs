@@ -40,7 +40,7 @@ namespace Controllers.Menus
 				Application.Quit();
 			}
 
-			this.buttonQuit.gameObject.transform.position = new Vector2(buttonQuit.transform.position.x,this.buttonPlayController.GetHeigthRatio());
+			this.buttonQuit.gameObject.transform.position = new Vector2(buttonQuit.transform.position.x,this.buttonPlayController.GetHeigthRatio() + 0.01f);
 		}
 		
 		// Update is called once per frame

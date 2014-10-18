@@ -626,7 +626,7 @@ GameObject:
   - 132: {fileID: 1109669594}
   - 114: {fileID: 1109669593}
   m_Layer: 0
-  m_Name: Text Description
+  m_Name: TextPlayToStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: .5, y: .5}
-  fontSizeRatio: .100000001
+  fontSizeRatio: .0900000036
 --- !u!132 &1109669594
 GUIText:
   m_ObjectHideFlags: 0
@@ -671,13 +671,13 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 7e9fe2f869b8c96419dad0b895c72684, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278255615
+    rgba: 4278221363
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &1174214593
@@ -1005,7 +1005,7 @@ GameObject:
   - 131: {fileID: 1731535941}
   - 114: {fileID: 1731535942}
   m_Layer: 0
-  m_Name: Monkey
+  m_Name: LogoMonkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

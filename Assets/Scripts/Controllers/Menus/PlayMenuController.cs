@@ -41,6 +41,8 @@ namespace Controllers.Menus
 				AudioController.PlayButtonClick();
 				this.GoBack();
 			}
+
+			this.buttonBack.gameObject.transform.position = new Vector2(buttonBack.transform.position.x,this.buttonSingleplayerController.GetHeigthRatio() + 0.01f);
 		}
 
 		void Update()
