@@ -28,6 +28,11 @@ namespace Controllers
 		/// Max amount of alive objects.
 		/// </summary>
 		public int maxCount = 1;
+
+		/// <summary>
+		/// Time in seconds for the spawner to start.
+		/// </summary>
+		public float startFrom = -1f;
 		
 
 		//----------------------------------------------------------------------------
@@ -37,8 +42,12 @@ namespace Controllers
 
 		void Start()
 		{
-			spawner = this.gameObject.DoSomethingLater(this.Spawn,this.randomSpawnRate());
+			float startFrom = this.startFrom;
+			if(this.startFrom < 0f)
+				startFrom = this.randomSpawnRate();
+
 			this.spawnedObjects = new List<Transform>();
+			spawner = this.gameObject.DoSomethingLater(this.Spawn,startFrom);
 		}
 
 		void Update()
