@@ -26,11 +26,6 @@ namespace Controllers.Menus
 
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 		}
-		
-		void OnGUI()
-		{
-			this.buttonBack.transform.position = new Vector2(buttonBack.transform.position.x,this.buttonSingleplayerController.GetHeigthRatio() + 0.01f);
-		}
 
 		void Update()
 		{

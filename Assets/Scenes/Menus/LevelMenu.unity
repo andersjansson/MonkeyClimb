@@ -579,7 +579,7 @@ GameObject:
   - 114: {fileID: 2038749721}
   m_Layer: 0
   m_Name: ButtonJungle
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -607,6 +607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6ebc5a3479cc74da1e4ab72e78cd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedTo: {fileID: 0}
+  linkedOffsetRatio: {x: 0, y: 0}
+  guiDepth: 1
   title: Welcome to the Jungle
   fontSizeRatio: .200000003
   textOffsetRatio: {x: 0, y: 0}
@@ -730,7 +733,7 @@ GameObject:
   - 114: {fileID: 2112647565}
   m_Layer: 0
   m_Name: ButtonBack
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,6 +761,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6ebc5a3479cc74da1e4ab72e78cd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedTo: {fileID: 0}
+  linkedOffsetRatio: {x: 0, y: 0}
+  guiDepth: 1
   title: Back
   fontSizeRatio: .839999974
   textOffsetRatio: {x: 0, y: 0}

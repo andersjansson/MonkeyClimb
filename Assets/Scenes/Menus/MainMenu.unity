@@ -192,7 +192,7 @@ GameObject:
   - 114: {fileID: 426865993}
   m_Layer: 0
   m_Name: ButtonQuit
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,6 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6ebc5a3479cc74da1e4ab72e78cd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedTo: {fileID: 1726703523}
+  linkedOffsetRatio: {x: 0, y: .00999999978}
+  guiDepth: 1
   title: Quit
   fontSizeRatio: .839999974
   textOffsetRatio: {x: 0, y: 0}
@@ -484,9 +487,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 935560993}
   - 20: {fileID: 935560992}
-  - 124: {fileID: 935560991}
-  - 92: {fileID: 935560990}
-  - 81: {fileID: 935560989}
   m_Layer: 0
   m_Name: PillarboxCamera
   m_TagString: Untagged
@@ -494,30 +494,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &935560989
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1695642287}
-  m_GameObject: {fileID: 935560988}
-  m_Enabled: 1
---- !u!92 &935560990
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9200000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1695642287}
-  m_GameObject: {fileID: 935560988}
-  m_Enabled: 1
---- !u!124 &935560991
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 12400000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1695642287}
-  m_GameObject: {fileID: 935560988}
-  m_Enabled: 1
 --- !u!20 &935560992
 Camera:
   m_ObjectHideFlags: 0
@@ -1222,7 +1198,7 @@ GameObject:
   - 114: {fileID: 1726703525}
   m_Layer: 0
   m_Name: ButtonPlay
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,6 +1226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6ebc5a3479cc74da1e4ab72e78cd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkedTo: {fileID: 0}
+  linkedOffsetRatio: {x: 0, y: 0}
+  guiDepth: 1
   title: Play
   fontSizeRatio: .839999974
   textOffsetRatio: {x: 0, y: 0}

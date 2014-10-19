@@ -12,8 +12,7 @@ namespace Controllers
 		private GUIStyle styleOverlay;
 		private bool paused;
 
-		private GameObject labelObject;
-		private LabelController labelController;
+		public GameObject[] menuObjects;
 
 		void Start ()
 		{
@@ -24,9 +23,27 @@ namespace Controllers
 			this.styleOverlay = new GUIStyle();
 			this.styleOverlay.normal.background = this.textureOverlay;
 
-			this.labelObject = GameObject.Find("GUI/PauseMenu/Label");
-			this.labelController = this.labelObject.GetComponent<LabelController>();
-			labelController.enabled = false;
+			foreach (GameObject item in this.menuObjects)
+			{
+				if(item.tag == "MenuButton")
+				{
+					var buttonController = item.GetComponent<ButtonController>();
+					if(buttonController != null)
+					{
+						switch(item.name)
+						{
+							case "ButtonMainMenu":
+								buttonController.OnClick = this.MainMenu;
+								break;
+							case "ButtonQuit":
+								buttonController.OnClick = Application.Quit;
+								break;
+						}
+					}
+				}
+
+				item.SetActive(false);
+			}
 		}
 
 		void Update()
@@ -35,11 +52,14 @@ namespace Controllers
 			pauseButton |= Input.GetButtonDown("Exit");
 			if(pauseButton)
 			{
-				this.labelController.enabled = false;
 				this.paused = !paused;
-				if(this.paused)
+				foreach (GameObject item in this.menuObjects)
 				{
-					this.labelController.enabled = true;
+					item.SetActive(false);
+					if(this.paused)
+					{
+						item.SetActive(true);
+					}
 				}
 			}
 		}
@@ -54,6 +74,11 @@ namespace Controllers
 				GUI.depth = this.guiDepth;
 				GUI.Label(new Rect(cameraX, cameraY, Camera.main.pixelWidth, Camera.main.pixelHeight), this.textureOverlay, this.styleOverlay);
 			}
+		}
+
+		private void MainMenu()
+		{
+			Application.LoadLevel("MainMenu");
 		}
 	}
 }

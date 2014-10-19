@@ -370,6 +370,110 @@ Prefab:
   m_RootGameObject: {fileID: 438595249}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1370403231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1370403233}
+  - 114: {fileID: 1370403232}
+  m_Layer: 0
+  m_Name: ButtonQuit
+  m_TagString: MenuButton
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1370403232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370403231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6ebc5a3479cc74da1e4ab72e78cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedTo: {fileID: 1712799516}
+  linkedOffsetRatio: {x: 0, y: .00999999978}
+  guiDepth: -1
+  title: Quit Game
+  fontSizeRatio: .839999974
+  textOffsetRatio: {x: 0, y: 0}
+  style:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: 3fa68252ca79f7e4abd3ef7219dc2bc6, type: 3}
+      m_TextColor: {r: 1, g: 1, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 2800000, guid: deed605313d66e34aae963b39e08a6f1, type: 3}
+      m_TextColor: {r: .996078432, g: .996078432, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 2800000, guid: deed605313d66e34aae963b39e08a6f1, type: 3}
+      m_TextColor: {r: .992156863, g: .992156863, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: 7e9fe2f869b8c96419dad0b895c72684, type: 3}
+    m_FontSize: 0
+    m_FontStyle: 1
+    m_Alignment: 4
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+--- !u!4 &1370403233
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370403231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: .800000012, y: .600000024, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2021903590}
+  m_RootOrder: 2
 --- !u!1 &1563400457
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +575,110 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2021903590}
   m_RootOrder: 0
+--- !u!1 &1712799516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1712799517}
+  - 114: {fileID: 1712799518}
+  m_Layer: 0
+  m_Name: ButtonMainMenu
+  m_TagString: MenuButton
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712799517
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712799516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .400000006, z: 0}
+  m_LocalScale: {x: .800000012, y: .600000024, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2021903590}
+  m_RootOrder: 1
+--- !u!114 &1712799518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712799516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6ebc5a3479cc74da1e4ab72e78cd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkedTo: {fileID: 0}
+  linkedOffsetRatio: {x: 0, y: 0}
+  guiDepth: -1
+  title: Quit to Menu
+  fontSizeRatio: .839999974
+  textOffsetRatio: {x: 0, y: 0}
+  style:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: 3fa68252ca79f7e4abd3ef7219dc2bc6, type: 3}
+      m_TextColor: {r: 1, g: 1, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 2800000, guid: deed605313d66e34aae963b39e08a6f1, type: 3}
+      m_TextColor: {r: .996078432, g: .996078432, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 2800000, guid: deed605313d66e34aae963b39e08a6f1, type: 3}
+      m_TextColor: {r: .992156863, g: .992156863, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: 7e9fe2f869b8c96419dad0b895c72684, type: 3}
+    m_FontSize: 0
+    m_FontStyle: 1
+    m_Alignment: 4
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
 --- !u!1 &1819182991
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +810,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guiDepth: 1000
   colorOverlay: {r: 0, g: 0, b: 0, a: .427450985}
+  menuObjects:
+  - {fileID: 1563400457}
+  - {fileID: 1712799516}
+  - {fileID: 1370403231}
 --- !u!4 &2021903590
 Transform:
   m_ObjectHideFlags: 0
@@ -613,5 +825,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1563400459}
+  - {fileID: 1712799517}
+  - {fileID: 1370403233}
   m_Father: {fileID: 900601252}
   m_RootOrder: 0

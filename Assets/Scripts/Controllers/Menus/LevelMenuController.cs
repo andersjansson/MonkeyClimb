@@ -27,8 +27,6 @@ namespace Controllers.Menus
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 		}
 
-		void OnGUI(){}
-
 		void Update()
 		{
 			if (Input.GetKey (KeyCode.Escape))

@@ -26,12 +26,7 @@ namespace Controllers.Menus
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 			AudioController.LoopMenuMusic();
 		}
-		
-		void OnGUI()
-		{
-			this.buttonQuit.transform.position = new Vector2(buttonQuit.transform.position.x,this.buttonPlayController.GetHeigthRatio() + 0.01f);
-		}
-		
+
 		// Update is called once per frame
 		void Update ()
 		{
