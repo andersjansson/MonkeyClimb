@@ -146,9 +146,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 138906077}
   - 20: {fileID: 138906076}
-  - 124: {fileID: 138906075}
-  - 92: {fileID: 138906074}
-  - 81: {fileID: 138906073}
   m_Layer: 0
   m_Name: PillarboxCamera
   m_TagString: Untagged
@@ -156,30 +153,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &138906073
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 620197633}
-  m_GameObject: {fileID: 138906072}
-  m_Enabled: 1
---- !u!92 &138906074
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9200000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 620197633}
-  m_GameObject: {fileID: 138906072}
-  m_Enabled: 1
---- !u!124 &138906075
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 12400000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 620197633}
-  m_GameObject: {fileID: 138906072}
-  m_Enabled: 1
 --- !u!20 &138906076
 Camera:
   m_ObjectHideFlags: 0
@@ -462,7 +435,7 @@ GUIText:
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4278221363
+    rgba: 4278255615
   m_PixelCorrect: 1
   m_RichText: 1
 --- !u!1 &900601251
@@ -641,16 +614,16 @@ MonoBehaviour:
     m_Name: 
     m_Normal:
       m_Background: {fileID: 2800000, guid: 92c094a65884a5546b79b7e27f8ad3ae, type: 3}
-      m_TextColor: {r: .45588237, g: .348985851, b: 0, a: 1}
+      m_TextColor: {r: 0, g: .154411793, b: .0431372561, a: .925490201}
     m_Hover:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Active:
       m_Background: {fileID: 2800000, guid: 5c1534aa3d155304ea7db18a5071eea5, type: 3}
-      m_TextColor: {r: .454901963, g: .349019617, b: 0, a: 1}
+      m_TextColor: {r: 0, g: .152941182, b: .0431372561, a: 1}
     m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: .454901963, g: .349019617, b: 0, a: 1}
+      m_Background: {fileID: 2800000, guid: 5c1534aa3d155304ea7db18a5071eea5, type: 3}
+      m_TextColor: {r: 0, g: .152941182, b: .0431372561, a: 1}
     m_OnNormal:
       m_Background: {fileID: 0}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
@@ -706,7 +679,7 @@ GameObject:
   - 4: {fileID: 2078607480}
   - 212: {fileID: 2078607481}
   m_Layer: 0
-  m_Name: Jungle
+  m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,7 +717,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a88ab599fb4396541aed7e1aeef82a6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9e8b18c1190db5e43a77705c09560cf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2112647563
 GameObject:

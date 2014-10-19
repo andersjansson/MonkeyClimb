@@ -410,9 +410,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 416201180}
   - 20: {fileID: 416201184}
-  - 124: {fileID: 416201183}
-  - 92: {fileID: 416201182}
-  - 81: {fileID: 416201181}
   m_Layer: 0
   m_Name: PillarboxCamera
   m_TagString: Untagged
@@ -432,30 +429,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 23253224}
   m_RootOrder: 1
---- !u!81 &416201181
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8100000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1979504420}
-  m_GameObject: {fileID: 416201179}
-  m_Enabled: 1
---- !u!92 &416201182
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9200000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1979504420}
-  m_GameObject: {fileID: 416201179}
-  m_Enabled: 1
---- !u!124 &416201183
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 12400000, guid: bf12adcccd4dfc74181402178d5e14ac,
-    type: 2}
-  m_PrefabInternal: {fileID: 1979504420}
-  m_GameObject: {fileID: 416201179}
-  m_Enabled: 1
 --- !u!20 &416201184
 Camera:
   m_ObjectHideFlags: 0
@@ -1286,7 +1259,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: .286764711, g: .426470578, b: .631372571, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

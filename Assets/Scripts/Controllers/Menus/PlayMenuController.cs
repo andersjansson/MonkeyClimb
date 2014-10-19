@@ -17,32 +17,19 @@ namespace Controllers.Menus
 		{
 			this.buttonSingleplayer = GameObject.Find("ButtonSingleplayer");
 			this.buttonSingleplayerController = buttonSingleplayer.GetComponent<ButtonController>();
+			buttonSingleplayerController.OnClick = this.LevelMenuSinglePlayer;
+
 			
 			this.buttonBack = GameObject.Find("ButtonBack");
 			this.buttonBackController = buttonBack.GetComponent<ButtonController>();
+			buttonBackController.OnClick = this.MainMenu;
 
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 		}
 		
 		void OnGUI()
 		{
-			buttonBack.transform.position = new Vector2(buttonBack.transform.position.x,buttonSingleplayerController.GetHeigthRatio());
-
-			// Draw a button to start the game
-			if(GUI.Button(buttonSingleplayerController.Button,buttonSingleplayerController.title,buttonSingleplayerController.style))
-			{
-				AudioController.PlayButtonClick();
-				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("LevelMenu"); } );
-			}
-			
-			// Draw a button to quit the game
-			if(GUI.Button(buttonBackController.Button,buttonBackController.title,buttonBackController.style))
-			{
-				AudioController.PlayButtonClick();
-				this.GoBack();
-			}
-
-			this.buttonBack.gameObject.transform.position = new Vector2(buttonBack.transform.position.x,this.buttonSingleplayerController.GetHeigthRatio() + 0.01f);
+			this.buttonBack.transform.position = new Vector2(buttonBack.transform.position.x,this.buttonSingleplayerController.GetHeigthRatio() + 0.01f);
 		}
 
 		void Update()
@@ -51,6 +38,18 @@ namespace Controllers.Menus
 			{
 				this.GoBack();
 			}
+		}
+
+		private void LevelMenuSinglePlayer()
+		{
+			AudioController.PlayButtonClick();
+			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("LevelMenu"); } );
+		}
+
+		private void MainMenu()
+		{
+			AudioController.PlayButtonClick();
+			this.GoBack();
 		}
 
 		private void GoBack()

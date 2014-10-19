@@ -19,34 +19,34 @@ namespace Controllers.Menus
 			this.buttonBack 	= GameObject.Find("ButtonBack");
 
 			this.buttonJungleController = buttonJungle.GetComponent<ButtonController>();
+			this.buttonJungleController.OnClick = this.JungleLevelSinglePlayer;
+
 			this.buttonBackController 	= buttonBack.GetComponent<ButtonController>();
+			this.buttonBackController.OnClick = this.PlayMenu;
 
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 		}
 
-		void OnGUI() {
+		void OnGUI(){}
 
-			// Draw a button to start the game
-			if(GUI.Button(buttonJungleController.Button,buttonJungleController.title,buttonJungleController.style))
-			{
-				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("Jungle"); } );
-			}
-
-			// Draw a button to go back
-			if(GUI.Button(buttonBackController.Button,buttonBackController.title,buttonBackController.style))
-			{
-				AudioController.PlayButtonClick();
-				this.GoBack();
-			}
-		}
-
-		void Update ()
+		void Update()
 		{
 			if (Input.GetKey (KeyCode.Escape))
 			{
 				this.GoBack();
 			}
+		}
 
+		private void JungleLevelSinglePlayer()
+		{
+			AudioController.PlayButtonClick();
+			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("Jungle"); } );
+		}
+
+		private void PlayMenu()
+		{
+			AudioController.PlayButtonClick();
+			this.GoBack();
 		}
 
 		private void GoBack()

@@ -17,30 +17,19 @@ namespace Controllers.Menus
 		{
 			this.buttonPlay = GameObject.Find("ButtonPlay");
 			this.buttonPlayController = buttonPlay.GetComponent<ButtonController>();
+			buttonPlayController.OnClick = this.PlayMenu;
 
 			this.buttonQuit = GameObject.Find("ButtonQuit");
 			this.buttonQuitController = buttonQuit.GetComponent<ButtonController>();
+			buttonQuitController.OnClick = Application.Quit;
 
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
 			AudioController.LoopMenuMusic();
 		}
-
+		
 		void OnGUI()
 		{
-			// Draw a button to start the game
-			if(GUI.Button(this.buttonPlayController.Button,this.buttonPlayController.title,this.buttonPlayController.style))
-			{
-				AudioController.PlayButtonClick();
-				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("PlayMenu"); } );
-			}
-			
-			// Draw a button to quit the game
-			if(GUI.Button(this.buttonQuitController.Button,this.buttonQuitController.title,this.buttonQuitController.style))
-			{
-				Application.Quit();
-			}
-
-			this.buttonQuit.gameObject.transform.position = new Vector2(buttonQuit.transform.position.x,this.buttonPlayController.GetHeigthRatio() + 0.01f);
+			this.buttonQuit.transform.position = new Vector2(buttonQuit.transform.position.x,this.buttonPlayController.GetHeigthRatio() + 0.01f);
 		}
 		
 		// Update is called once per frame
@@ -50,6 +39,12 @@ namespace Controllers.Menus
 			{
 				Application.Quit();
 			}
+		}
+
+		private void PlayMenu()
+		{
+			AudioController.PlayButtonClick();
+			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("PlayMenu"); } );
 		}
 	}
 }
