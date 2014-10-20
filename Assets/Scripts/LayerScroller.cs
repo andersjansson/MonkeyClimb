@@ -28,6 +28,8 @@ public class LayerScroller : MonoBehaviour
 	/// Background is infinite
 	/// </summary>
 	public bool isLooping = false;
+
+	public int startIndex = 0;
 	
 	//----------------------------------------------------------------------------
 	
@@ -40,7 +42,7 @@ public class LayerScroller : MonoBehaviour
 			// Get all the children of the layer with a renderer
 			backgroundParts = new List<Transform>();
 			
-			for (int i = 0; i < transform.childCount; i++)
+			for (int i = this.startIndex; i < transform.childCount; i++)
 			{
 				Transform child = transform.GetChild(i);
 				
@@ -56,7 +58,7 @@ public class LayerScroller : MonoBehaviour
 			// We would need to add a few conditions to handle
 			// all the possible scrolling directions.
 			backgroundParts = backgroundParts.OrderBy(
-				t => t.position.x
+				t => t.position.y
 				).ToList();
 		}
 	}
@@ -87,7 +89,7 @@ public class LayerScroller : MonoBehaviour
 				// Check if the child is already (partly) before the camera.
 				// We test the position first because the IsVisibleFrom
 				// method is a bit heavier to execute.
-				if (firstChild.position.x < Camera.main.transform.position.x)
+				if (firstChild.position.y <= Camera.main.transform.position.y)
 				{
 					// If the child is already on the left of the camera,
 					// we test if it's completely outside and needs to be
@@ -102,10 +104,19 @@ public class LayerScroller : MonoBehaviour
 						// Set the position of the recyled one to be AFTER
 						// the last child.
 						// Note: Only work for horizontal scrolling currently.
-						firstChild.position = new Vector3(lastPosition.x + lastSize.x, firstChild.position.y, firstChild.position.z);
-						
+						//firstChild.position = new Vector3(lastPosition.x + lastSize.x, firstChild.position.y, firstChild.position.z);
+
+						firstChild.position = new Vector3
+						(
+							firstChild.position.x, 
+							lastPosition.y + lastSize.y, 
+							firstChild.position.z
+						);
+
 						// Set the recycled child to the last position
 						// of the backgroundPart list.
+
+
 						this.backgroundParts.Remove(firstChild);
 						this.backgroundParts.Add(firstChild);
 					}
