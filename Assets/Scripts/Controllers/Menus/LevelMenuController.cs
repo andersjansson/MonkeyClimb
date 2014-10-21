@@ -35,9 +35,15 @@ namespace Controllers.Menus
 			}
 		}
 
+		private void SelectLevel()
+		{
+			AudioController.StopMenuMusic();
+			AudioController.PlayButtonClick();
+		}
+
 		private void JungleLevelSinglePlayer()
 		{
-			AudioController.PlayButtonClick();
+			this.SelectLevel();
 			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("Jungle"); } );
 		}
 

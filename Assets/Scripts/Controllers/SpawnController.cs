@@ -12,7 +12,12 @@ namespace Controllers
 		/// <summary>
 		/// The prefab to spawn.
 		/// </summary>
-		public Transform spawnPrefab;
+		public Transform[] spawnPrefab;
+
+		/// <summary>
+		/// Use prefab's transform position instead.
+		/// </summary>
+		public bool usePrefabTransform = false;
 
 		/// <summary>
 		/// The minimum spawn rate in seconds.
@@ -79,8 +84,21 @@ namespace Controllers
 			this.spawnedObjects.RemoveAll(item => item == null);
 			if(this.spawnedObjects.Count < this.maxCount)
 			{
-				var spawnedTransform = Instantiate(this.spawnPrefab) as Transform;
-				spawnedTransform.position = this.transform.position;
+				var spawnPrefab = this.spawnPrefab[Random.Range(0,this.spawnPrefab.Length)];
+				var spawnedTransform = Instantiate(spawnPrefab) as Transform;
+
+
+				if(!this.usePrefabTransform)
+					spawnedTransform.position = this.transform.position;
+				else
+				{
+					Vector3 difference = new Vector3(
+						0,
+						spawnedTransform.position.y - this.transform.position.y,
+						0);
+
+					spawnedTransform.position -= difference;
+				}
 
 				this.spawnedObjects.Add(spawnedTransform);
 			}

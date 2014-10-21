@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Controllers.Main;
 
 namespace Controllers
 {
@@ -78,6 +79,7 @@ namespace Controllers
 
 		private void MainMenu()
 		{
+			AudioController.StopJungleMusic();
 			Application.LoadLevel("MainMenu");
 		}
 	}
