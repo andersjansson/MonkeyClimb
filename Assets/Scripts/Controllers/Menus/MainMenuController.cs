@@ -24,7 +24,7 @@ namespace Controllers.Menus
 			buttonQuitController.OnClick = Application.Quit;
 
 			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
-			AudioController.LoopMenuMusic();
+			AudioController.Play("BackgroundSound",0,true);
 		}
 
 		// Update is called once per frame
@@ -38,7 +38,7 @@ namespace Controllers.Menus
 
 		private void PlayMenu()
 		{
-			AudioController.PlayButtonClick();
+			AudioController.Play("ButtonSound",1);
 			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("PlayMenu"); } );
 		}
 	}

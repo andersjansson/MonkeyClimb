@@ -81,10 +81,20 @@ namespace Controllers
 		
 		private void Spawn()
 		{
+			if (this.spawnPrefab.Length == 0)
+			{
+				Debug.LogError("No spawnPrefab have been set, please check the inspector.");
+				return;
+			}
+
+			int index = 0;
+			if (this.spawnPrefab.Length > 1)
+				index = Random.Range (0, this.spawnPrefab.Length);
+
 			this.spawnedObjects.RemoveAll(item => item == null);
 			if(this.spawnedObjects.Count < this.maxCount)
 			{
-				var spawnPrefab = this.spawnPrefab[Random.Range(0,this.spawnPrefab.Length)];
+				var spawnPrefab = this.spawnPrefab[index];
 				var spawnedTransform = Instantiate(spawnPrefab) as Transform;
 
 

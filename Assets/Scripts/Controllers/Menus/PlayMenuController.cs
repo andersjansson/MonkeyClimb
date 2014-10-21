@@ -37,13 +37,13 @@ namespace Controllers.Menus
 
 		private void LevelMenuSinglePlayer()
 		{
-			AudioController.PlayButtonClick();
+			AudioController.Play("ButtonSound",1);
 			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("LevelMenu"); } );
 		}
 
 		private void MainMenu()
 		{
-			AudioController.PlayButtonClick();
+			AudioController.Play("ButtonSound",1);
 			this.GoBack();
 		}
 

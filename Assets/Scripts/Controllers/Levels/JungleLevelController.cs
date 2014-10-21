@@ -9,7 +9,7 @@ namespace Controllers.Level
 		// Use this for initialization
 		void Start ()
 		{
-			AudioController.LoopJungleMusic();
+			AudioController.Play("BackgroundSound",2);
 		}
 		
 		// Update is called once per frame

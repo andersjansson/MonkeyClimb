@@ -1,55 +1,88 @@
-﻿using UnityEngine;
+using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using Utilities;
+using Models;
 
 namespace Controllers.Main
 {	
 	public class AudioController : MonoBehaviour
 	{
-		public static void LoopMenuMusic()
+		private static Dictionary<string,AudioSource> instance;
+		private static AudioClip[] clips;
+		public 	static DelayedExecution.WaitController wait;
+
+		static AudioController()
 		{
-			GameObject audioObject = GameObject.Find("PersistentData/Sounds/BackgroundMenuMusic");
-			if(audioObject != null && !audioObject.audio.isPlaying)
+			AudioController.instance = new Dictionary<string,AudioSource>();
+		}
+
+		void Awake()
+		{
+			GameObject soundsObject = GameObject.Find("PersistentData/Sounds");
+
+			if(soundsObject != null)
 			{
-				audioObject.audio.loop = true;
-				audioObject.audio.Play();
+				var clips = soundsObject.GetComponent<SoundClips>();
+				AudioController.clips = clips.sounds;
+				
+				AudioController.Set("BackgroundSound",true);
+				AudioController.Set("ButtonSound");
 			}
 		}
 
-		public static void StopMenuMusic()
+		public static void Set(string name, bool loop = false)
 		{
-			GameObject audioObject = GameObject.Find("PersistentData/Sounds/BackgroundMenuMusic");
-			if(audioObject != null)
+			GameObject audioObject = GameObject.Find("PersistentData/Sounds/" + name);
+			if (audioObject != null && !AudioController.instance.ContainsKey(name))
 			{
-				audioObject.audio.Stop();
+				audioObject.audio.loop = loop;
+				AudioController.instance.Add(name,audioObject.audio);
 			}
 		}
 
-		public static void LoopJungleMusic()
+		public static void PlayIfPaused(string key)
 		{
-			GameObject audioObject = GameObject.Find("PersistentData/Sounds/BackgroundJungleMusic");
-			if(audioObject != null && !audioObject.audio.isPlaying)
+			AudioController.Play (key, once: true);
+		}
+
+		public static void Play(string key, int index = -1, bool once = false, Action callback = null)
+		{
+			if (!AudioController.instance.ContainsKey(key)) return;
+
+			AudioSource audio = AudioController.instance [key].audio;
+			if(once && audio.isPlaying) return;
+
+			if(index > -1)
 			{
-				audioObject.audio.loop = true;
-				audioObject.audio.Play();
+				audio.clip = AudioController.clips[index];
+			}
+
+			audio.Play();
+			if(callback != null)
+			{
+				AudioController.wait = audio.gameObject.DoSomethingLater(callback,audio.clip.length);
 			}
 		}
 
-		public static void StopJungleMusic()
+		public static void Pause(string key)
 		{
-			GameObject audioObject = GameObject.Find("PersistentData/Sounds/BackgroundJungleMusic");
-			if(audioObject != null)
-			{
-				audioObject.audio.Stop();
-			}
+			AudioController.Stop (key, true);
 		}
 
-		public static void PlayButtonClick()
+		public static void Stop(string key, bool pause = false)
 		{
-			GameObject audioObject = GameObject.Find("PersistentData/Sounds/MenuButtonSound");
-			if(audioObject != null && !audioObject.audio.isPlaying)
+			if (!AudioController.instance.ContainsKey(key)) return;
+
+			AudioSource audio = AudioController.instance [key].audio;
+			if(pause)
 			{
-				audioObject.audio.Play();
+				audio.Pause();
+				return;
 			}
+
+			audio.Stop();
 		}
 	}
 }

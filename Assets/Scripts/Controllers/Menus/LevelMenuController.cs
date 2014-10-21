@@ -37,8 +37,8 @@ namespace Controllers.Menus
 
 		private void SelectLevel()
 		{
-			AudioController.StopMenuMusic();
-			AudioController.PlayButtonClick();
+			AudioController.Stop("BackgroundSound");
+			AudioController.Play("ButtonSound",1);
 		}
 
 		private void JungleLevelSinglePlayer()
@@ -49,7 +49,7 @@ namespace Controllers.Menus
 
 		private void PlayMenu()
 		{
-			AudioController.PlayButtonClick();
+			AudioController.Play("ButtonSound",1);
 			this.GoBack();
 		}
 

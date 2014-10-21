@@ -62,6 +62,14 @@ namespace Controllers
 						item.SetActive(true);
 					}
 				}
+
+				Time.timeScale = 1;
+				AudioController.PlayIfPaused("BackgroundSound");
+				if(this.paused)
+				{
+					Time.timeScale = 0;
+					AudioController.Pause("BackgroundSound");
+				}
 			}
 		}
 
@@ -79,7 +87,8 @@ namespace Controllers
 
 		private void MainMenu()
 		{
-			AudioController.StopJungleMusic();
+			Time.timeScale = 1;
+			AudioController.Stop("BackgroundSound");
 			Application.LoadLevel("MainMenu");
 		}
 	}

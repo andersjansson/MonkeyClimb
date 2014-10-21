@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Utilities;
+using Controllers.Main;
 
 namespace Controllers.Menus
 {
@@ -21,8 +22,13 @@ namespace Controllers.Menus
 
 			if(continueButton)
 			{
-				CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("MainMenu"); } );
+				AudioController.Play("ButtonSound",4,callback:this.MainMenu);
 			}
+		}
+
+		private void MainMenu()
+		{
+			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("MainMenu"); } );
 		}
 	}
 }
