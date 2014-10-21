@@ -94,10 +94,10 @@ namespace Controllers
 				{
 					Vector3 difference = new Vector3(
 						0,
-						spawnedTransform.position.y - this.transform.position.y,
+						this.transform.position.y - spawnedTransform.position.y,
 						0);
 
-					spawnedTransform.position -= difference;
+					spawnedTransform.position += difference;
 				}
 
 				this.spawnedObjects.Add(spawnedTransform);

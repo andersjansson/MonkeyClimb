@@ -2,19 +2,30 @@
 using System.Collections;
 using Extensions;
 
-public class StaticSpriteController : MonoBehaviour
+namespace Controllers.Main
 {
-	private bool hasSpawn = false;
-
-	void Update ()
+	public class StaticSpriteController : MonoBehaviour
 	{
-		if(this.hasSpawn == false && renderer.IsVisibleFrom(Camera.main) == true)
+		private bool hasSpawn = false;
+
+		void Start ()
 		{
-			this.hasSpawn = true;
+			if(renderer.IsVisibleFrom (Camera.main) == true)
+			{
+				this.hasSpawn = true;
+			}
 		}
-		else if(this.hasSpawn == true && renderer.IsVisibleFrom(Camera.main) == false)
+
+		void Update ()
 		{
-			Destroy(this.gameObject);
+			if(this.hasSpawn == false && renderer.IsVisibleFrom(Camera.main) == true)
+			{
+				this.hasSpawn = true;
+			}
+			else if(this.hasSpawn == true && renderer.IsVisibleFrom(Camera.main) == false)
+			{
+				Destroy(this.gameObject);
+			}
 		}
 	}
 }
