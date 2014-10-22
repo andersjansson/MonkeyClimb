@@ -5,7 +5,7 @@ using System.Linq;
 using Extensions;
 
 /// <summary>
-/// Parallax scrolling script that should be assigned to a layer
+/// Parallax scrolling script that should be assigned to a layer (Unfinished class)
 /// </summary>
 public class LayerScroller : MonoBehaviour
 {
@@ -89,7 +89,11 @@ public class LayerScroller : MonoBehaviour
 				// Check if the child is already (partly) before the camera.
 				// We test the position first because the IsVisibleFrom
 				// method is a bit heavier to execute.
-				if (firstChild.position.y <= Camera.main.transform.position.y)
+				bool partlyVisible = false;
+				partlyVisible |= (firstChild.position.y < Camera.main.transform.position.y);
+				partlyVisible |= (firstChild.position.x < Camera.main.transform.position.x);
+
+				if(partlyVisible)
 				{
 					// If the child is already on the left of the camera,
 					// we test if it's completely outside and needs to be

@@ -23,6 +23,8 @@ namespace Controllers
 		private RectSize scaledSize = new RectSize(0f,0f);
 		private Vector2 pos = new Vector2(0f,0f);
 
+		private bool clicked = false;
+
 		void OnGUI()
 		{
 			this.scaledSize = style.normal.background.GetScaleSize(this.transform.localScale);
@@ -69,6 +71,9 @@ namespace Controllers
 			GUI.depth = this.guiDepth;
 			if(GUI.Button(area,this.title, this.style) && this.OnClick != null)
 			{
+				if(this.clicked) return;
+
+				this.clicked = true;
 				this.OnClick();
 			}
 		}

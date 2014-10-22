@@ -22,7 +22,7 @@ namespace Controllers.Menus
 
 			if(continueButton)
 			{
-				AudioController.Play("ButtonSound",4,callback:this.MainMenu);
+				AudioController.Play("ButtonSound",4,true,this.MainMenu);
 			}
 		}
 

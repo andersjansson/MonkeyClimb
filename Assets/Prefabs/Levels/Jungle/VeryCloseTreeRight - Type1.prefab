@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: VeryCloseTreeRight - Type1
   m_TagString: Untagged
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b5a33c9aca225428d469fe6d39044a, type: 3}
+  m_Script: {fileID: 11500000, guid: fd01aa5ae797f454e9a1fc02100744fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400002

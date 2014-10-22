@@ -47,7 +47,7 @@ namespace Controllers.Main
 			AudioController.Play (key, once: true);
 		}
 
-		public static void Play(string key, int index = -1, bool once = false, Action callback = null)
+		public static void Play(string key, int index = -1, bool once = false, Action forward = null)
 		{
 			if (!AudioController.instance.ContainsKey(key)) return;
 
@@ -60,9 +60,9 @@ namespace Controllers.Main
 			}
 
 			audio.Play();
-			if(callback != null)
+			if(forward != null)
 			{
-				AudioController.wait = audio.gameObject.DoSomethingLater(callback,audio.clip.length);
+				AudioController.wait = audio.gameObject.DoSomethingLater(forward,audio.clip.length);
 			}
 		}
 
