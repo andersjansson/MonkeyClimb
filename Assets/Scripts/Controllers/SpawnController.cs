@@ -44,7 +44,7 @@ namespace Controllers
 
 		public DelayedExecution.WaitController spawner;
 		private List<Transform> spawnedObjects;
-		private int lastSpawnedIndex = 0;
+		private Transform lastPrefab;
 
 		void Start()
 		{
@@ -96,15 +96,15 @@ namespace Controllers
 				if (this.spawnPrefab.Length > 1)
 				{
 					List<Transform> tempPrefabs = this.spawnPrefab.OfType<Transform>().ToList();
-					if(this.lastSpawnedIndex != null)
+					if(this.lastPrefab != null)
 					{
-						tempPrefabs.RemoveAt(this.lastSpawnedIndex);
+						tempPrefabs.Remove(this.lastPrefab);
 					}
 
 					index = Random.Range (0, tempPrefabs.Count);
 
 					tempPrefab = tempPrefabs[index];
-					this.lastSpawnedIndex = index;
+					this.lastPrefab = tempPrefab;
 				}
 
 				var spawnedTransform = Instantiate(tempPrefab) as Transform;
