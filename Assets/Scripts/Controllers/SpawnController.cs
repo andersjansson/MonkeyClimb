@@ -44,6 +44,7 @@ namespace Controllers
 
 		public DelayedExecution.WaitController spawner;
 		private List<Transform> spawnedObjects;
+		private int lastSpawnedIndex = 0;
 
 		void Start()
 		{
@@ -87,17 +88,26 @@ namespace Controllers
 				return;
 			}
 
-			int index = 0;
-			if (this.spawnPrefab.Length > 1)
-				index = Random.Range (0, this.spawnPrefab.Length);
-
 			this.spawnedObjects.RemoveAll(item => item == null);
 			if(this.spawnedObjects.Count < this.maxCount)
 			{
-				var spawnPrefab = this.spawnPrefab[index];
-				var spawnedTransform = Instantiate(spawnPrefab) as Transform;
+				int index = 0;
+				Transform tempPrefab = this.spawnPrefab[0];
+				if (this.spawnPrefab.Length > 1)
+				{
+					List<Transform> tempPrefabs = this.spawnPrefab.OfType<Transform>().ToList();
+					if(this.lastSpawnedIndex != null)
+					{
+						tempPrefabs.RemoveAt(this.lastSpawnedIndex);
+					}
 
+					index = Random.Range (0, tempPrefabs.Count);
 
+					tempPrefab = tempPrefabs[index];
+					this.lastSpawnedIndex = index;
+				}
+
+				var spawnedTransform = Instantiate(tempPrefab) as Transform;
 				if(!this.usePrefabTransform)
 					spawnedTransform.position = this.transform.position;
 				else
@@ -109,6 +119,8 @@ namespace Controllers
 
 					spawnedTransform.position += difference;
 				}
+
+				//this.spawnPrefab[index].renderer.bounds.Intersects
 
 				this.spawnedObjects.Add(spawnedTransform);
 			}
