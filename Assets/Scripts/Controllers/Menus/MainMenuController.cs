@@ -21,25 +21,25 @@ namespace Controllers.Menus
 
 			this.buttonQuit = GameObject.Find("ButtonQuit");
 			this.buttonQuitController = buttonQuit.GetComponent<ButtonController>();
-			buttonQuitController.OnClick = Application.Quit;
+			buttonQuitController.OnClick = GameController.Exit;
 
-			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
+			CameraFade.StartAlphaFade(Color.black, true, 0.5f, 0f);
 			AudioController.Play("BackgroundSound",0,true);
 		}
 
 		// Update is called once per frame
 		void Update ()
 		{
-			if (Input.GetKey (KeyCode.Escape))
+			if(Input.GetKeyDown(KeyCode.Escape))
 			{
-				Application.Quit();
+				GameController.Exit();
 			}
 		}
 
 		private void PlayMenu()
 		{
 			AudioController.Play("ButtonSound",1);
-			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("PlayMenu"); } );
+			GameController.LoadLevel("PlayMenu");
 		}
 	}
 }

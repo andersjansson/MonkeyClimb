@@ -75,7 +75,13 @@ namespace Controllers
 
 				this.clicked = true;
 				this.OnClick();
+				Invoke("ResetClick",2f);
 			}
+		}
+
+		private void ResetClick()
+		{
+			this.clicked = false;
 		}
 
 		public float GetWidthRatio()

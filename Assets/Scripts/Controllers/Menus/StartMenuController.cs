@@ -28,7 +28,7 @@ namespace Controllers.Menus
 
 		private void MainMenu()
 		{
-			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("MainMenu"); } );
+			GameController.LoadLevel("MainMenu");
 		}
 	}
 }

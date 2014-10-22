@@ -37,7 +37,7 @@ namespace Controllers
 								buttonController.OnClick = this.MainMenu;
 								break;
 							case "ButtonQuit":
-								buttonController.OnClick = Application.Quit;
+								buttonController.OnClick = GameController.Exit;
 								break;
 						}
 					}
@@ -51,6 +51,9 @@ namespace Controllers
 		{
 			bool pauseButton = false;
 			pauseButton |= Input.GetButtonDown("Exit");
+			pauseButton |= Input.GetKeyDown(KeyCode.Escape);
+			pauseButton |= Input.GetKeyDown(KeyCode.Menu);
+
 			if(pauseButton)
 			{
 				this.paused = !paused;
@@ -89,7 +92,7 @@ namespace Controllers
 		{
 			Time.timeScale = 1;
 			AudioController.Stop("BackgroundSound");
-			Application.LoadLevel("MainMenu");
+			GameController.LoadLevel("MainMenu");
 		}
 	}
 }

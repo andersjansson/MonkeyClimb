@@ -24,12 +24,12 @@ namespace Controllers.Menus
 			this.buttonBackController = buttonBack.GetComponent<ButtonController>();
 			buttonBackController.OnClick = this.MainMenu;
 
-			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
+			CameraFade.StartAlphaFade(Color.black, true, 0.5f, 0f);
 		}
 
 		void Update()
 		{
-			if (Input.GetKey (KeyCode.Escape))
+			if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Menu))
 			{
 				this.GoBack();
 			}
@@ -38,7 +38,7 @@ namespace Controllers.Menus
 		private void LevelMenuSinglePlayer()
 		{
 			AudioController.Play("ButtonSound",1);
-			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("LevelMenu"); } );
+			GameController.LoadLevel("LevelMenu");
 		}
 
 		private void MainMenu()
@@ -49,7 +49,7 @@ namespace Controllers.Menus
 
 		private void GoBack()
 		{
-			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("MainMenu"); } );
+			GameController.LoadLevel("MainMenu");
 		}
 	}
 }

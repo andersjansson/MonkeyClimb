@@ -24,14 +24,18 @@ namespace Controllers.Menus
 			this.buttonBackController 	= buttonBack.GetComponent<ButtonController>();
 			this.buttonBackController.OnClick = this.PlayMenu;
 
-			CameraFade.StartAlphaFade(Color.black, true, 1f, 0f);
+			CameraFade.StartAlphaFade(Color.black, true, 0.5f, 0f);
 		}
 
 		void Update()
 		{
-			if (Input.GetKey (KeyCode.Escape))
+			if(Input.GetKeyDown(KeyCode.Escape))
 			{
 				this.GoBack();
+			}
+			else if(Input.GetKeyDown(KeyCode.Menu))
+			{
+				GameController.LoadLevel("MainMenu");
 			}
 		}
 
@@ -44,7 +48,7 @@ namespace Controllers.Menus
 		private void JungleLevelSinglePlayer()
 		{
 			this.SelectLevel();
-			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("Jungle"); } );
+			GameController.LoadLevel("Jungle");
 		}
 
 		private void PlayMenu()
@@ -55,7 +59,7 @@ namespace Controllers.Menus
 
 		private void GoBack()
 		{
-			CameraFade.StartAlphaFade( Color.black, false, 1f, 0f, () => { Application.LoadLevel("PlayMenu"); } );
+			GameController.LoadLevel("PlayMenu");
 		}
 	}
 }
