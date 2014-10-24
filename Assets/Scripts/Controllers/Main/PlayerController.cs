@@ -65,9 +65,13 @@ namespace Controllers.Main
 				if (this.renderer == null) return;
 
 				if(inputX < 0f)
+				{
 					this.MoveLeft();
+				}
 				else if(inputX > 0f)
+				{
 					this.MoveRight();
+				}
 			}
 		}
 	}
