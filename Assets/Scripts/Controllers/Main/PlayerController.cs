@@ -8,63 +8,67 @@ namespace Controllers.Main
 	/// <summary>
 	/// Player controller and behavior
 	/// </summary>
+	[RequireComponent (typeof(SpriteRenderer))]
 	public class PlayerController : MonoBehaviour
 	{
 		private HealthController 	health;
-		private MovementController 	movement;
+		private LerpMovementController 	movement;
 
-		private float moveTimer;
-		private Vector3 startPos;
-		private Vector3 endPos;
 		private GameObject moveBox;
-
+	
 		void Start ()
 		{
 			this.health 	= this.GetComponent<HealthController>();
-			this.movement 	= this.GetComponent<MovementController>();
+			this.movement 	= this.GetComponent<LerpMovementController>();
 
 			this.moveBox = GameObject.Find("Level/Middlegrounds/Middlegrounds - Main/TreeTrunk1");
-
-
-			MoveLeft ();
-
 		}
 
-		void ResetMove()
-		{
-			this.moveTimer = Time.time;
-			this.startPos = this.transform.position;
-			this.endPos = this.transform.position;
-		}
 
-		void MoveLeft()
+		private void MoveLeft()
 		{
-			this.ResetMove ();
-			this.endPos.x = 
-				moveBox.transform.position.x - 
-					moveBox.renderer.bounds.size.x/2f +
-					this.renderer.bounds.size.x;
-		}
-
-		void MoveRight()
-		{
-			this.ResetMove ();
-			this.endPos.x = 
-				moveBox.transform.position.x + 
-					moveBox.renderer.bounds.size.x/2f -
+			var endPos = this.transform.position;
+			endPos.x = 
+				moveBox.collider2D.bounds.center.x - 
+					moveBox.collider2D.bounds.size.x/2f +
 					this.renderer.bounds.size.x/2f;
+
+			this.movement.StartLerp(endPos);
 		}
-		
-		// Update is called once per frame
-		void Update ()
+
+		private void MoveCenter()
 		{
-			float inputX = Input.GetAxis("Horizontal");
-			//float inputY = Input.GetAxis("Vertical");
+			var endPos = this.transform.position;
+			endPos.x = moveBox.transform.position.x;
+			
+			this.movement.StartLerp(endPos);
+		}
 
-			//Debug.Log(inputX);
+		private void MoveRight()
+		{
+			var endPos = this.transform.position;
+			endPos.x = 
+				moveBox.collider2D.bounds.center.x + 
+					moveBox.collider2D.bounds.size.x/2f -
+					this.renderer.bounds.size.x/2f;
 
-			//Debug.Log (Time.time - moveTimer);
-			transform.position = Vector3.Lerp(startPos, endPos, Time.deltaTime * 20f);
+			this.movement.StartLerp(endPos);
+		}
+
+		void Update()
+		{
+			if(this.movement != null && !this.movement.IsLerping)
+			{
+				float inputX = Input.GetAxis ("Horizontal");
+				//float inputY = Input.GetAxis ("Vertical");
+
+				if (this.renderer == null) return;
+
+				if(inputX < 0f)
+					this.MoveLeft();
+				else if(inputX > 0f)
+					this.MoveRight();
+			}
 		}
 	}
 }

@@ -9,7 +9,7 @@ namespace Controllers.Level
 
 		private LabelController readyLabel;
 		private LabelController readyStatusLabel; 
-		private DelayedExecution.WaitController timer;
+		public DelayedExecution.WaitController timer;
 		private int iReady = 3;
 		private bool readyEnd = false;
 		private Color readyColor;
@@ -66,7 +66,7 @@ namespace Controllers.Level
 			if(iReady > 0)
 			{
 				iReady--;
-				timer = this.gameObject.DoSomethingLater(this.UpdateReady,1f);
+				this.timer = this.gameObject.DoSomethingLater(this.UpdateReady,1f);
 			}
 		}
 

@@ -1257,6 +1257,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1142775357}
   - 212: {fileID: 1142775358}
+  - 61: {fileID: 1142775359}
   m_Layer: 0
   m_Name: TreeTrunk1
   m_TagString: Untagged
@@ -1298,6 +1299,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 01f5d174a3c486846915c2943d8442eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1142775359
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1142775356}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 16.6900005, y: 21.3999996}
+  m_Center: {x: .800000012, y: 0}
 --- !u!1 &1235896874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,6 +1693,7 @@ GameObject:
   - 4: {fileID: 1507019464}
   - 212: {fileID: 1507019466}
   - 50: {fileID: 1507019465}
+  - 114: {fileID: 1507019468}
   - 114: {fileID: 1507019467}
   m_Layer: 0
   m_Name: Player
@@ -1749,6 +1762,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6389f36685243eb46a804c71bfa146f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1507019468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507019463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a320c85ec964845b2e535f7eaffb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTakenDuringLerp: 1
+  startPosition: {x: 0, y: 0, z: 0}
+  endPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1563400457
 GameObject:
   m_ObjectHideFlags: 0
