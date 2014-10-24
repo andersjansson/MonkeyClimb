@@ -43,7 +43,7 @@ namespace Controllers.Main
 
 		void Update()
 		{
-			if(this.movement != null && !this.movement.IsLerping)
+			if(ReadyController.Ready && this.movement != null && !this.movement.IsLerping)
 			{
 				float inputX = Input.GetAxis ("Horizontal");
 				//float inputY = Input.GetAxis ("Vertical");

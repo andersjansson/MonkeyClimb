@@ -71,7 +71,9 @@ namespace Controllers
 					percentageComplete = 1.0f;
 				}				
 
-				transform.position = Vector3.Lerp (this.startPosition, this.endPosition, percentageComplete);
+				Vector3 newPos = this.transform.position;
+				newPos.x = Vector3.Lerp (this.startPosition, this.endPosition, percentageComplete).x;
+				transform.position = newPos;
 			}
 		}
 	}

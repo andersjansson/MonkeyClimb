@@ -2,7 +2,7 @@
 using System.Collections;
 using Controllers.Main;
 
-namespace Controllers
+namespace Controllers.Main
 {
 	public class PauseController : MonoBehaviour
 	{
