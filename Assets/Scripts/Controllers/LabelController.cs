@@ -13,13 +13,20 @@ namespace Controllers
 		public Vector2 textOffsetRatio = new Vector2(0f,0f);
 		public GUIStyle style;
 
+		public float overrideWidth = 0f;
+		public float overrideHeight = 0f;
+
 		private RectSize scaledSize = new RectSize(0f,0f);
 		private Vector2 pos = new Vector2(0f,0f);
 
 		void OnGUI()
 		{
 			this.scaledSize = style.normal.background.GetScaleSize(this.transform.localScale);
-			
+			if(this.overrideWidth > 0f || this.overrideHeight > 0f)
+			{
+				this.scaledSize = GUIScale.RectScaleSize(this.overrideWidth,this.overrideHeight,this.transform.localScale);
+			}
+
 			float screenW = (float)(Screen.width)/2f - Camera.main.pixelWidth/2;
 			float screenH = (float)(Screen.height)/2f - Camera.main.pixelHeight/2;
 			

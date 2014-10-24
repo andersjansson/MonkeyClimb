@@ -10,14 +10,13 @@ namespace Controllers.Main
 		{
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		}
-
+	
 		public static void LoadLevel(string name)
 		{
 			CameraFade.StartAlphaFade( Color.black, false, 0.5f, 0f, () => { 
 
 				if(Application.isLoadingLevel) return;
 				Application.LoadLevel(name); 
-
 			});
 		}
 
