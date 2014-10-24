@@ -17,6 +17,8 @@ namespace Controllers.Level
 		// Use this for initialization
 		void Start ()
 		{
+			GameController.SetLevelCollider ("Level/Middlegrounds/Middlegrounds - Main/TreeTrunk1");
+
 			var labelObject = GameObject.Find ("GUI/ReadyLabel");
 			this.readyLabel = labelObject.GetComponent<LabelController>();
 

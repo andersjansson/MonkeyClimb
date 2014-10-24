@@ -14,46 +14,32 @@ namespace Controllers.Main
 		private HealthController 	health;
 		private LerpMovementController 	movement;
 
-		private GameObject moveBox;
-	
 		void Start ()
 		{
 			this.health 	= this.GetComponent<HealthController>();
 			this.movement 	= this.GetComponent<LerpMovementController>();
 
-			this.moveBox = GameObject.Find("Level/Middlegrounds/Middlegrounds - Main/TreeTrunk1");
+			var centerPos	= this.transform.position;
+			centerPos.x 	= GameController.GetLevelPos (GameController.LEVEL_CENTER, this.renderer.bounds).x;
+			this.transform.position = centerPos;
 		}
 
-
-		private void MoveLeft()
+		private void Move(int movetype)
 		{
-			var endPos = this.transform.position;
-			endPos.x = 
-				moveBox.collider2D.bounds.center.x - 
-					moveBox.collider2D.bounds.size.x/2f +
-					this.renderer.bounds.size.x/2f;
+			var endPos 		= GameController.GetLevelPos(movetype,this.renderer.bounds);
+			var centerPos	= GameController.GetLevelPos(GameController.LEVEL_CENTER,this.renderer.bounds);
 
-			this.movement.StartLerp(endPos);
+			if(this.transform.position.x != centerPos.x && endPos.x != this.transform.position.x)
+			{
+				this.movement.StartLerp(centerPos);
+				return;
+			}
+	
+			if(endPos.x != this.transform.position.x)
+				this.movement.StartLerp(endPos);
 		}
 
-		private void MoveCenter()
-		{
-			var endPos = this.transform.position;
-			endPos.x = moveBox.transform.position.x;
-			
-			this.movement.StartLerp(endPos);
-		}
 
-		private void MoveRight()
-		{
-			var endPos = this.transform.position;
-			endPos.x = 
-				moveBox.collider2D.bounds.center.x + 
-					moveBox.collider2D.bounds.size.x/2f -
-					this.renderer.bounds.size.x/2f;
-
-			this.movement.StartLerp(endPos);
-		}
 
 		void Update()
 		{
@@ -62,15 +48,13 @@ namespace Controllers.Main
 				float inputX = Input.GetAxis ("Horizontal");
 				//float inputY = Input.GetAxis ("Vertical");
 
-				if (this.renderer == null) return;
-
 				if(inputX < 0f)
 				{
-					this.MoveLeft();
+					this.Move(GameController.LEVEL_LEFT);
 				}
 				else if(inputX > 0f)
 				{
-					this.MoveRight();
+					this.Move(GameController.LEVEL_RIGHT);
 				}
 			}
 		}
