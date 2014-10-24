@@ -8,6 +8,7 @@ namespace Controllers
 {
 	public class LabelController : MonoBehaviour
 	{
+		public int guiDepth = 1;
 		public string title = "Title";
 		public float fontSizeRatio = 0.1f;
 		public Vector2 textOffsetRatio = new Vector2(0f,0f);
@@ -45,6 +46,7 @@ namespace Controllers
 				scaledSize.Width * this.textOffsetRatio.x,
 				scaledSize.Height * this.textOffsetRatio.y);
 
+			GUI.depth = this.guiDepth;
 			GUI.Label(area, this.title, this.style);
 		}
 	}
