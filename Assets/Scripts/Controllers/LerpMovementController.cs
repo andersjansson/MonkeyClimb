@@ -24,12 +24,15 @@ namespace Controllers
 
 		public bool IsLerping{get;private set;}
 		private float timeStartedLerping;
+		private bool local = false;
 
 		private void PrepareLerp()
 		{
 			this.IsLerping = true;
 			this.timeStartedLerping = Time.time;
 			this.startPosition 	= this.transform.position;
+			if(this.local)
+				this.startPosition 	= this.transform.localPosition;
 		}
 
 
@@ -37,8 +40,9 @@ namespace Controllers
 		/// Start move to end destination.
 		/// </summary>
 		/// <param name="endPosition"></param>
-		public void StartLerp(Vector3 endPosition)
+		public void StartLerp(Vector3 endPosition,bool local = false)
 		{
+			this.local = local;
 			this.PrepareLerp();
 			this.endPosition 	= endPosition;
 		}
@@ -46,8 +50,9 @@ namespace Controllers
 		/// <summary>
 		/// Start move to end destination using fixed finish position.
 		/// </summary>
-		public void StartLerp()
+		public void StartLerp(bool local = false)
 		{
+			this.local = local;
 			this.PrepareLerp();
 		}
 
@@ -71,9 +76,15 @@ namespace Controllers
 					percentageComplete = 1.0f;
 				}				
 
-				Vector3 newPos = this.transform.position;
-				newPos.x = Vector3.Lerp (this.startPosition, this.endPosition, percentageComplete).x;
-				transform.position = newPos;
+				if(this.local)
+				{
+					this.transform.localPosition = Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete);
+					return;
+				}
+
+				var newPos 	= this.transform.position;
+				newPos.x 	= Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete).x;
+				this.transform.position = newPos;
 			}
 		}
 	}

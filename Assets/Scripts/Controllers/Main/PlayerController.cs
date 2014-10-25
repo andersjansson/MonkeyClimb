@@ -46,7 +46,9 @@ namespace Controllers.Main
 			if(ReadyController.Ready && this.movement != null && !this.movement.IsLerping)
 			{
 				float inputX = Input.GetAxis ("Horizontal");
-				//float inputY = Input.GetAxis ("Vertical");
+				bool climbButton = false;
+				climbButton |= Input.GetButtonDown("Fire1");
+				climbButton |= Input.GetButtonDown("Fire2");
 
 				if(inputX < 0f)
 				{
@@ -56,6 +58,17 @@ namespace Controllers.Main
 				{
 					this.Move(GameController.LEVEL_RIGHT);
 				}
+				else if(climbButton && this.transform.localPosition.y < 0.20f)
+				{
+					this.movement.StartLerp(this.transform.localPosition + Vector3.up*0.1f,true);
+				}
+			}
+
+			if(this.transform.localPosition.y > -0.6f)
+			{
+				var newPos = this.transform.localPosition;
+				newPos.y = newPos.y - 0.1f * Time.deltaTime;
+				this.transform.localPosition = newPos;
 			}
 		}
 	}
