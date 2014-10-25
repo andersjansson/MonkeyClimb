@@ -176,7 +176,7 @@ GameObject:
   - 4: {fileID: 43515212}
   - 114: {fileID: 43515213}
   m_Layer: 0
-  m_Name: Skyboxs
+  m_Name: Skyboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1027,6 +1027,52 @@ Transform:
   - {fileID: 381461866}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &950917874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 950917875}
+  - 114: {fileID: 950917876}
+  m_Layer: 0
+  m_Name: SpawnerClouds - Far
+  m_TagString: Untagged
+  m_Icon: {fileID: -1500306622, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950917875
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 950917874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.10559201, y: -.280000001, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1632110505}
+  m_RootOrder: 4
+--- !u!114 &950917876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 950917874}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cacc3a680cf09c4cad0873b9ea1aabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPrefab:
+  - {fileID: 400000, guid: a7b0859847ba5b740be637d8ee10ccf2, type: 2}
+  usePrefabTransform: 0
+  minSpawnRate: 10
+  spawnRate: 15
+  maxCount: 2
+  startFrom: 0
 --- !u!1 &971016008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1984,7 @@ Transform:
   - {fileID: 418146741}
   - {fileID: 1055011940}
   - {fileID: 1790003008}
+  - {fileID: 950917875}
   m_Father: {fileID: 150503785}
   m_RootOrder: 4
 --- !u!114 &1632110506
