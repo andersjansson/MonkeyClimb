@@ -46,9 +46,12 @@ namespace Controllers.Main
 			if(ReadyController.Ready && this.movement != null && !this.movement.IsLerping)
 			{
 				float inputX = Input.GetAxis ("Horizontal");
+				float inputY = Input.GetAxis ("Vertical");
+
 				bool climbButton = false;
 				climbButton |= Input.GetButtonDown("Fire1");
 				climbButton |= Input.GetButtonDown("Fire2");
+				climbButton |= (inputY > 0f);
 
 				if(inputX < 0f)
 				{
