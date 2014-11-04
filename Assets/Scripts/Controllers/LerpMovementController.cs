@@ -42,6 +42,8 @@ namespace Controllers
 		/// <param name="endPosition"></param>
 		public void StartLerp(Vector3 endPosition,bool local = false)
 		{
+			if(this.IsLerping) return;
+
 			this.local = local;
 			this.PrepareLerp();
 			this.endPosition 	= endPosition;
@@ -52,6 +54,8 @@ namespace Controllers
 		/// </summary>
 		public void StartLerp(bool local = false)
 		{
+			if(this.IsLerping) return;
+
 			this.local = local;
 			this.PrepareLerp();
 		}
@@ -82,9 +86,9 @@ namespace Controllers
 					return;
 				}
 
-				var newPos 	= this.transform.position;
-				newPos.x 	= Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete).x;
-				this.transform.position = newPos;
+				//var newPos 	= this.transform.position;
+				//newPos.x 	= Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete).x;
+				//this.transform.position = newPos;
 			}
 		}
 	}

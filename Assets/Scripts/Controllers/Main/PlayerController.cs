@@ -20,23 +20,43 @@ namespace Controllers.Main
 			this.movement 	= this.GetComponent<LerpMovementController>();
 
 			var centerPos	= this.transform.position;
-			centerPos.x 	= GameController.GetLevelPos (GameController.LEVEL_CENTER, this.renderer.bounds).x;
-			this.transform.position = centerPos;
+			centerPos.x 	= GameController.GetLevelPos (GameController.LEVEL_CENTER, this.gameObject).x;
+			this.transform.localPosition = centerPos;
 		}
 
-		private void Move(int movetype)
+		private void MoveHorizontal(int movetype)
 		{
-			var endPos 		= GameController.GetLevelPos(movetype,this.renderer.bounds);
-			var centerPos	= GameController.GetLevelPos(GameController.LEVEL_CENTER,this.renderer.bounds);
+			var endPos 		= GameController.GetLevelPos(movetype,this.gameObject);
+			var centerPos	= GameController.GetLevelPos(GameController.LEVEL_CENTER,this.gameObject);
 
-			if(this.transform.position.x != centerPos.x && endPos.x != this.transform.position.x)
+			if(this.transform.localPosition.x != centerPos.x && endPos.x != this.transform.localPosition.x)
 			{
-				this.movement.StartLerp(centerPos);
+				this.movement.StartLerp(centerPos,true);
 				return;
 			}
 	
-			if(endPos.x != this.transform.position.x)
-				this.movement.StartLerp(endPos);
+			if(endPos.x != this.transform.localPosition.x)
+				this.movement.StartLerp(endPos,true);
+		}
+
+		private void MoveVertical(int movetype)
+		{
+			var endPos 		= GameController.GetLevelPos(movetype,this.gameObject);
+			var middlePos	= GameController.GetLevelPos(GameController.LEVEL_MIDDLE,this.gameObject);
+
+			//Debug.Log (endPos.y + "dsdsd" + this.transform.localPosition.y);
+			//if(endPos.y == this.transform.localPosition.y) return;
+
+			if(this.transform.localPosition.y != middlePos.y && endPos.y != this.transform.localPosition.y)
+			{
+
+				Debug.Log (endPos.y + "dsdsd" + this.transform.localPosition.y);
+				this.movement.StartLerp(middlePos,true);
+				return;
+			}
+			
+			if(endPos.y != this.transform.localPosition.y)
+				this.movement.StartLerp(endPos,true);
 		}
 
 
@@ -55,23 +75,31 @@ namespace Controllers.Main
 
 				if(inputX < 0f)
 				{
-					this.Move(GameController.LEVEL_LEFT);
+					this.MoveHorizontal(GameController.LEVEL_LEFT);
 				}
 				else if(inputX > 0f)
 				{
-					this.Move(GameController.LEVEL_RIGHT);
+					this.MoveHorizontal(GameController.LEVEL_RIGHT);
+				}
+				else if(inputY > 0f)
+				{
+					this.MoveVertical(GameController.LEVEL_TOP);
+				}
+				else if(inputY < 0f)
+				{
+					this.MoveVertical(GameController.LEVEL_BOTTOM);
 				}
 				else if(climbButton && this.transform.localPosition.y < 0.20f)
 				{
-					this.movement.StartLerp(this.transform.localPosition + Vector3.up*0.1f,true);
+					//this.movement.StartLerp(this.transform.localPosition + Vector3.up*0.1f,true);
 				}
 			}
 
 			if(this.transform.localPosition.y > -0.6f)
 			{
-				var newPos = this.transform.localPosition;
-				newPos.y = newPos.y - 0.1f * Time.deltaTime;
-				this.transform.localPosition = newPos;
+				//var newPos = this.transform.localPosition;
+				//newPos.y = newPos.y - 0.1f * Time.deltaTime;
+				//this.transform.localPosition = newPos;
 			}
 		}
 	}
