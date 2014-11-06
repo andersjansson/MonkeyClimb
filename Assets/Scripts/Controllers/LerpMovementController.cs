@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 namespace Controllers
@@ -25,14 +26,19 @@ namespace Controllers
 		public bool IsLerping{get;private set;}
 		private float timeStartedLerping;
 		private bool local = false;
+		private Action callback;
 
 		private void PrepareLerp()
 		{
-			this.IsLerping = true;
-			this.timeStartedLerping = Time.time;
 			this.startPosition 	= this.transform.position;
 			if(this.local)
 				this.startPosition 	= this.transform.localPosition;
+
+			if(this.startPosition != this.endPosition)
+			{
+				this.timeStartedLerping = Time.time;
+				this.IsLerping = true;
+			}
 		}
 
 
@@ -40,22 +46,28 @@ namespace Controllers
 		/// Start move to end destination.
 		/// </summary>
 		/// <param name="endPosition"></param>
-		public void StartLerp(Vector3 endPosition,bool local = false)
+		/// <param name="local"></param>
+		/// <param name="callback"></param>
+		public void StartLerp(Vector3 endPosition,bool local = false,Action callback = null)
 		{
 			if(this.IsLerping) return;
 
+			this.callback = callback;
 			this.local = local;
-			this.PrepareLerp();
 			this.endPosition 	= endPosition;
+			this.PrepareLerp();
 		}
 
 		/// <summary>
 		/// Start move to end destination using fixed finish position.
 		/// </summary>
-		public void StartLerp(bool local = false)
+		/// <param name="local"></param>
+		/// <param name="callback"></param>
+		public void StartLerp(bool local = false,Action callback = null)
 		{
 			if(this.IsLerping) return;
 
+			this.callback = callback;
 			this.local = local;
 			this.PrepareLerp();
 		}
@@ -65,6 +77,11 @@ namespace Controllers
 		/// </summary>
 		public void Stop()
 		{
+			if(this.callback != null)
+			{
+				this.callback();
+			}
+
 			this.IsLerping = false;
 		}
 
@@ -76,19 +93,25 @@ namespace Controllers
 				float percentageComplete = timeSinceStarted / this.timeTakenDuringLerp;
 				if(percentageComplete >= 1.0f)
 				{
-					this.IsLerping = false;
 					percentageComplete = 1.0f;
-				}				
+				}			
 
 				if(this.local)
 				{
 					this.transform.localPosition = Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete);
+					if(this.transform.localPosition == this.endPosition)
+					{
+						this.Stop();
+					}
+
 					return;
 				}
 
-				//var newPos 	= this.transform.position;
-				//newPos.x 	= Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete).x;
-				//this.transform.position = newPos;
+				this.transform.position = Vector3.Lerp(this.startPosition, this.endPosition, percentageComplete);
+				if(this.transform.position == this.endPosition)
+				{
+					this.Stop();
+				}
 			}
 		}
 	}

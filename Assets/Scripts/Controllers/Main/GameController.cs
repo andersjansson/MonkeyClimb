@@ -48,13 +48,13 @@ namespace Controllers.Main
 					endPos.x = collider.transform.localPosition.x + collider.bounds.size.x/2f - obj.renderer.bounds.size.x/2f;
 					break;
 				case LEVEL_TOP:
-					endPos.y = collider.transform.localPosition.y + collider.bounds.size.y/2f - obj.renderer.bounds.size.y/2f;
+					endPos.y = collider.transform.localPosition.y + collider.bounds.size.y/2f;
 					break;
 				case LEVEL_MIDDLE:
 					endPos.y = collider.transform.localPosition.y;
 					break;
 				case LEVEL_BOTTOM:
-					endPos.y = collider.transform.localPosition.y - collider.bounds.size.y/2f + obj.renderer.bounds.size.y/2f;
+					endPos.y = collider.transform.localPosition.y - collider.bounds.size.y/2f;
 					break;
 			}
 
