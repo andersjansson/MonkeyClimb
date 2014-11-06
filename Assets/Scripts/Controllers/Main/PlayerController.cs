@@ -13,6 +13,7 @@ namespace Controllers.Main
 	{
 		private HealthController 	health;
 		private LerpMovementController 	movement;
+		private int lastVerticalMoveType = GameController.LEVEL_MIDDLE;
 
 		void Start ()
 		{
@@ -29,6 +30,7 @@ namespace Controllers.Main
 			var endPos 		= GameController.GetLevelPos(movetype,this.gameObject);
 			var centerPos	= GameController.GetLevelPos(GameController.LEVEL_CENTER,this.gameObject);
 
+			this.movement.timeTakenDuringLerp = 0.5f;
 			if(this.transform.localPosition.x != centerPos.x && endPos.x != this.transform.localPosition.x)
 			{
 				this.movement.StartLerp(centerPos,true);
@@ -44,19 +46,24 @@ namespace Controllers.Main
 			var endPos 		= GameController.GetLevelPos(movetype,this.gameObject);
 			var middlePos	= GameController.GetLevelPos(GameController.LEVEL_MIDDLE,this.gameObject);
 
-			//Debug.Log (endPos.y + "dsdsd" + this.transform.localPosition.y);
-			//if(endPos.y == this.transform.localPosition.y) return;
-
-			if(this.transform.localPosition.y != middlePos.y && endPos.y != this.transform.localPosition.y)
+			this.movement.timeTakenDuringLerp = 1f;
+			if(this.lastVerticalMoveType != GameController.LEVEL_MIDDLE && this.lastVerticalMoveType != movetype)
 			{
+				this.movement.StartLerp(middlePos,true,() => {
 
-				Debug.Log (endPos.y + "dsdsd" + this.transform.localPosition.y);
-				this.movement.StartLerp(middlePos,true);
+					this.lastVerticalMoveType = GameController.LEVEL_MIDDLE; 
+				});
+
 				return;
 			}
-			
-			if(endPos.y != this.transform.localPosition.y)
-				this.movement.StartLerp(endPos,true);
+
+			if(endPos.y != this.transform.localPosition.y && this.transform.localPosition.y == middlePos.y)
+			{
+				this.movement.StartLerp(endPos,true,() => {
+
+					this.lastVerticalMoveType = movetype; 
+				});
+			}
 		}
 
 
@@ -81,11 +88,11 @@ namespace Controllers.Main
 				{
 					this.MoveHorizontal(GameController.LEVEL_RIGHT);
 				}
-				else if(inputY > 0f)
+				else if(inputY > 0.1f)
 				{
 					this.MoveVertical(GameController.LEVEL_TOP);
 				}
-				else if(inputY < 0f)
+				else if(inputY < -0.1f)
 				{
 					this.MoveVertical(GameController.LEVEL_BOTTOM);
 				}
