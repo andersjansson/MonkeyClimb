@@ -12,7 +12,7 @@ namespace Controllers.Level
 
 		void Start ()
 		{
-			GameController.SetLevelCollider ("Level/Middlegrounds/Middlegrounds - Main/TreeTrunk1");
+			GameController.SetLevelCollider ("Render/Main Camera/MovementArea");
 			AudioController.Play ("ButtonSound",5,forward:this.StartSound);
 
 			this.skyboxPart1 = GameObject.Find("Level/Skyboxes/SkyboxJunglePart1");

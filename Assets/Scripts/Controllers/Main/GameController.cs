@@ -11,6 +11,9 @@ namespace Controllers.Main
 		public const int LEVEL_LEFT 	= 0;
 		public const int LEVEL_CENTER 	= 1;
 		public const int LEVEL_RIGHT 	= 2;
+		public const int LEVEL_TOP 		= 3;
+		public const int LEVEL_MIDDLE 	= 4;
+		public const int LEVEL_BOTTOM 	= 5;
 
 		void Start ()
 		{
@@ -28,21 +31,30 @@ namespace Controllers.Main
 			GameController.LevelCollider = levelObject.collider2D;
 		}
 
-		public static Vector3 GetLevelPos(int positionType,Bounds bounds)
+		public static Vector3 GetLevelPos(int positionType,GameObject obj)
 		{
 			var collider = GameController.LevelCollider;
-			var endPos = bounds.center;
+			var endPos = obj.transform.localPosition;
 			
 			switch (positionType)
 			{
 				case LEVEL_LEFT:
-					endPos.x = collider.bounds.center.x - collider.bounds.size.x/2f + bounds.size.x/2f;
+					endPos.x = collider.transform.localPosition.x - collider.bounds.size.x/2f + obj.renderer.bounds.size.x/2f;
 					break;
 				case LEVEL_CENTER:
-					endPos.x = collider.bounds.center.x;
+					endPos.x = collider.transform.localPosition.x;
 					break;
 				case LEVEL_RIGHT:
-					endPos.x = collider.bounds.center.x + collider.bounds.size.x/2f - bounds.size.x/2f;
+					endPos.x = collider.transform.localPosition.x + collider.bounds.size.x/2f - obj.renderer.bounds.size.x/2f;
+					break;
+				case LEVEL_TOP:
+					endPos.y = collider.transform.localPosition.y + collider.bounds.size.y/2f - obj.renderer.bounds.size.y/2f;
+					break;
+				case LEVEL_MIDDLE:
+					endPos.y = collider.transform.localPosition.y;
+					break;
+				case LEVEL_BOTTOM:
+					endPos.y = collider.transform.localPosition.y - collider.bounds.size.y/2f + obj.renderer.bounds.size.y/2f;
 					break;
 			}
 

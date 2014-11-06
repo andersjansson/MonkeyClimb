@@ -1928,6 +1928,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 0
+<<<<<<< HEAD
+--- !u!95 &1507019470
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507019463}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ed827d16b4de87449c4bffa8a05fce9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+=======
 --- !u!1 &1551288984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,6 +1984,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 15.8999996, y: 14.1999998}
   m_Center: {x: .330000013, y: 0}
+>>>>>>> afd0bc29fea33a65f209fa684c0c007d66f174ad
 --- !u!1 &1563400457
 GameObject:
   m_ObjectHideFlags: 0

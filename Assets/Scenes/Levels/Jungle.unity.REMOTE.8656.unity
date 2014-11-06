@@ -1833,7 +1833,6 @@ GameObject:
   - 114: {fileID: 1507019468}
   - 114: {fileID: 1507019467}
   - 114: {fileID: 1507019469}
-  - 95: {fileID: 1507019470}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
