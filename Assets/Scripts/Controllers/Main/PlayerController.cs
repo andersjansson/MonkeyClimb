@@ -11,14 +11,16 @@ namespace Controllers.Main
 	[RequireComponent (typeof(SpriteRenderer))]
 	public class PlayerController : MonoBehaviour
 	{
-		private HealthController 	health;
+		private HealthController 		health;
 		private LerpMovementController 	movement;
+		private ScoreController 		score;
 		private int lastVerticalMoveType = GameController.LEVEL_MIDDLE;
 
 		void Start ()
 		{
 			this.health 	= this.GetComponent<HealthController>();
 			this.movement 	= this.GetComponent<LerpMovementController>();
+			this.score 		= this.GetComponent<ScoreController>();
 
 			var centerPos	= this.transform.position;
 			centerPos.x 	= GameController.GetLevelPos (GameController.LEVEL_CENTER, this.gameObject).x;
@@ -97,6 +99,8 @@ namespace Controllers.Main
 					this.MoveVertical(GameController.LEVEL_BOTTOM);
 				}
 			}
+
+			this.score.Points = (this.GetComponentInParent<Transform>().position.y - this.transform.localPosition.y)*10f;
 		}
 	}
 }
