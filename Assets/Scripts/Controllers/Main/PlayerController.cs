@@ -14,7 +14,9 @@ namespace Controllers.Main
 		private HealthController 		health;
 		private LerpMovementController 	movement;
 		private ScoreController 		score;
-		private int lastVerticalMoveType = GameController.LEVEL_MIDDLE;
+
+		private int lastVerticalMoveType 	= GameController.LEVEL_MIDDLE;
+		private int lastHorizontalMoveType 	= GameController.LEVEL_CENTER;
 
 		void Start ()
 		{
@@ -33,14 +35,24 @@ namespace Controllers.Main
 			var centerPos	= GameController.GetLevelPos(GameController.LEVEL_CENTER,this.gameObject);
 
 			this.movement.timeTakenDuringLerp = 0.5f;
-			if(this.transform.localPosition.x != centerPos.x && endPos.x != this.transform.localPosition.x)
+
+			if(this.lastHorizontalMoveType != GameController.LEVEL_CENTER && this.lastHorizontalMoveType != movetype)
 			{
-				this.movement.StartLerp(centerPos,true);
+				this.movement.StartLerp(centerPos,true,() => {
+					
+					this.lastHorizontalMoveType = GameController.LEVEL_CENTER; 
+				});
+				
 				return;
 			}
 	
-			if(endPos.x != this.transform.localPosition.x)
-				this.movement.StartLerp(endPos,true);
+			if(this.lastHorizontalMoveType != movetype)
+			{
+				this.movement.StartLerp(endPos,true,() => {
+					
+					this.lastHorizontalMoveType = movetype; 
+				});
+			}
 		}
 
 		private void MoveVertical(int movetype)
@@ -59,7 +71,7 @@ namespace Controllers.Main
 				return;
 			}
 
-			if(endPos.y != this.transform.localPosition.y && this.transform.localPosition.y == middlePos.y)
+			if(this.lastVerticalMoveType != movetype)
 			{
 				this.movement.StartLerp(endPos,true,() => {
 
