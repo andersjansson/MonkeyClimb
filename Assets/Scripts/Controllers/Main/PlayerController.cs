@@ -80,33 +80,22 @@ namespace Controllers.Main
 				climbButton |= Input.GetButtonDown("Fire2");
 				climbButton |= (inputY > 0f);
 
-				if(inputX < 0f)
+				if(inputX < 0f || InputSwipeController.Left)
 				{
 					this.MoveHorizontal(GameController.LEVEL_LEFT);
 				}
-				else if(inputX > 0f)
+				else if(inputX > 0f || InputSwipeController.Right)
 				{
 					this.MoveHorizontal(GameController.LEVEL_RIGHT);
 				}
-				else if(inputY > 0.1f)
+				else if(inputY > 0.1f || InputSwipeController.Up)
 				{
 					this.MoveVertical(GameController.LEVEL_TOP);
 				}
-				else if(inputY < -0.1f)
+				else if(inputY < -0.1f || InputSwipeController.Down)
 				{
 					this.MoveVertical(GameController.LEVEL_BOTTOM);
 				}
-				else if(climbButton && this.transform.localPosition.y < 0.20f)
-				{
-					//this.movement.StartLerp(this.transform.localPosition + Vector3.up*0.1f,true);
-				}
-			}
-
-			if(this.transform.localPosition.y > -0.6f)
-			{
-				//var newPos = this.transform.localPosition;
-				//newPos.y = newPos.y - 0.1f * Time.deltaTime;
-				//this.transform.localPosition = newPos;
 			}
 		}
 	}
