@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Controllers.Main;
 
 namespace Controllers
 {
@@ -38,7 +39,13 @@ namespace Controllers
 		
 		void OnTriggerEnter2D(Collider2D otherCollider)
 		{
-
+			// Is this a obstacle?
+			ObstacleController obstacle = otherCollider.gameObject.GetComponent<ObstacleController>();
+			if (obstacle != null)
+			{
+				Destroy(otherCollider.gameObject);
+				Debug.Log("FOUND!");
+			}
 		}
 	}
 }

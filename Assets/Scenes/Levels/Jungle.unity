@@ -446,13 +446,28 @@ GameObject:
   m_Component:
   - 4: {fileID: 349621291}
   - 212: {fileID: 349621290}
+  - 50: {fileID: 349621294}
+  - 61: {fileID: 349621289}
+  - 114: {fileID: 349621293}
+  - 114: {fileID: 349621292}
   m_Layer: 0
-  m_Name: Fruit1
+  m_Name: Fruit1TestCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &349621289
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349621288}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 6.76000023, y: 5.0999999}
+  m_Center: {x: 0, y: 0}
 --- !u!212 &349621290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -481,12 +496,51 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349621288}
-  m_LocalRotation: {x: 0, y: 0, z: .267911047, w: .963443637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .469999999, z: -11}
   m_LocalScale: {x: .00999999978, y: .00999999978, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &349621292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349621288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91fe499e70074c541a45373aa4a50a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  isEnemy: 1
+--- !u!114 &349621293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349621288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fde2231aa5a43b48bebe941e9004f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &349621294
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 349621288}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &359193009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,12 +2304,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 1507019464}
   - 212: {fileID: 1507019466}
-  - 50: {fileID: 1507019465}
   - 114: {fileID: 1507019468}
   - 114: {fileID: 1507019467}
   - 114: {fileID: 1507019469}
   - 95: {fileID: 1507019470}
   - 114: {fileID: 1507019471}
+  - 61: {fileID: 1507019465}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2275,21 +2329,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1632110505}
   m_RootOrder: 0
---- !u!50 &1507019465
-Rigidbody2D:
+--- !u!61 &1507019465
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1507019463}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 4.01000023, y: 5.05999994}
+  m_Center: {x: 0, y: 0}
 --- !u!212 &1507019466
 SpriteRenderer:
   m_ObjectHideFlags: 0
