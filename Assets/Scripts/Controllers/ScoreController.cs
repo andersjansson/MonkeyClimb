@@ -9,8 +9,8 @@ namespace Controllers
 		public GameObject labelObject;
 		private LabelController label;
 
-		private float points = 0.12345123f;
-		public float Points
+		private float points = 0f;
+		public 	float Points
 		{
 			get
 			{
@@ -35,7 +35,7 @@ namespace Controllers
 
 		private void UpdateScore()
 		{
-			this.label.title = String.Format ("Distance: {0} Meters", this.Points.ToString("F1"));
+			this.label.title = String.Format ("Distance: {0} Meters", (int)this.Points);
 		}
 	}
 }

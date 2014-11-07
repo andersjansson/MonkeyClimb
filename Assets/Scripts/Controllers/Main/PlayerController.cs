@@ -112,7 +112,7 @@ namespace Controllers.Main
 				}
 			}
 
-			this.score.Points = (this.GetComponentInParent<Transform>().position.y - this.transform.localPosition.y)*10f;
+			this.score.Points = (this.GetComponentInParent<Transform>().position.y - this.transform.localPosition.y)*100f;
 		}
 	}
 }
