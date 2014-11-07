@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: b9ca62a443d7aec40a345a6976a5c078
+guid: 3bcc92471262fed4080455b245642b33
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Monkey_climb_anim_2_0
-    21300002: Monkey_climb_anim_2_1
-    21300004: Monkey_climb_anim_2_2
-    21300006: Monkey_climb_anim_2_3
-    21300008: Monkey_climb_anim_2_4
-    21300010: Monkey_climb_anim_2_5
-    21300012: Monkey_climb_anim_2_6
-    21300014: Monkey_climb_anim_2_7
-    21300016: Monkey_climb_anim_2_8
-    21300018: Monkey_climb_anim_2_9
-    21300020: Monkey_climb_anim_2_10
-    21300022: Monkey_climb_anim_2_11
-    21300024: Monkey_climb_anim_2_12
-    21300026: Monkey_climb_anim_2_13
+    21300000: Monkey_climb_anim_advanced2_0
+    21300002: Monkey_climb_anim_advanced2_1
+    21300004: Monkey_climb_anim_advanced2_2
+    21300006: Monkey_climb_anim_advanced2_3
+    21300008: Monkey_climb_anim_advanced2_4
+    21300010: Monkey_climb_anim_advanced2_5
+    21300012: Monkey_climb_anim_advanced2_6
+    21300014: Monkey_climb_anim_advanced2_7
+    21300016: Monkey_climb_anim_advanced2_8
+    21300018: Monkey_climb_anim_advanced2_9
+    21300020: Monkey_climb_anim_advanced2_10
+    21300022: Monkey_climb_anim_advanced2_11
+    21300024: Monkey_climb_anim_advanced2_12
+    21300026: Monkey_climb_anim_advanced2_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -57,7 +57,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Monkey_climb_anim_2_0
+    - name: Monkey_climb_anim_advanced2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -67,7 +67,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_1
+    - name: Monkey_climb_anim_advanced2_1
       rect:
         serializedVersion: 2
         x: 600
@@ -77,7 +77,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_2
+    - name: Monkey_climb_anim_advanced2_2
       rect:
         serializedVersion: 2
         x: 1200
@@ -87,7 +87,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_3
+    - name: Monkey_climb_anim_advanced2_3
       rect:
         serializedVersion: 2
         x: 1800
@@ -97,7 +97,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_4
+    - name: Monkey_climb_anim_advanced2_4
       rect:
         serializedVersion: 2
         x: 2400
@@ -107,7 +107,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_5
+    - name: Monkey_climb_anim_advanced2_5
       rect:
         serializedVersion: 2
         x: 3000
@@ -117,7 +117,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_6
+    - name: Monkey_climb_anim_advanced2_6
       rect:
         serializedVersion: 2
         x: 3600
@@ -127,7 +127,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_7
+    - name: Monkey_climb_anim_advanced2_7
       rect:
         serializedVersion: 2
         x: 4200
@@ -137,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_8
+    - name: Monkey_climb_anim_advanced2_8
       rect:
         serializedVersion: 2
         x: 4800
@@ -147,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_9
+    - name: Monkey_climb_anim_advanced2_9
       rect:
         serializedVersion: 2
         x: 5400
@@ -157,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_10
+    - name: Monkey_climb_anim_advanced2_10
       rect:
         serializedVersion: 2
         x: 6000
@@ -167,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_11
+    - name: Monkey_climb_anim_advanced2_11
       rect:
         serializedVersion: 2
         x: 6600
@@ -177,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_12
+    - name: Monkey_climb_anim_advanced2_12
       rect:
         serializedVersion: 2
         x: 7200
@@ -187,7 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Monkey_climb_anim_2_13
+    - name: Monkey_climb_anim_advanced2_13
       rect:
         serializedVersion: 2
         x: 7800
