@@ -18,7 +18,7 @@ namespace Controllers.Main
 			if(GameController.Pause)
 			{
 				this.movement.enabled = false;
-				this.rigidbody2D.velocity = new Vector2(0f,0f);
+				this.rigidbody2D.velocity = Vector2.zero;
 			}
 		}
 	}
