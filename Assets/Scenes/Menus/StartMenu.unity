@@ -762,7 +762,7 @@ MonoBehaviour:
   minSpawnRate: 6
   spawnRate: 8
   maxCount: 5
-  startFrom: 0
+  startFrom: 2
 --- !u!1 &1348004636
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +858,7 @@ MonoBehaviour:
   minSpawnRate: 6
   spawnRate: 7
   maxCount: 5
-  startFrom: 0
+  startFrom: 2
 --- !u!1 &1422094387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,4 +1402,4 @@ MonoBehaviour:
   minSpawnRate: 5
   spawnRate: 10
   maxCount: 5
-  startFrom: 0
+  startFrom: 1

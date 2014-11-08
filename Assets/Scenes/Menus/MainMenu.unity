@@ -366,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 6
   spawnRate: 8
   maxCount: 5
@@ -490,10 +491,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 5
   spawnRate: 10
   maxCount: 5
-  startFrom: 0
+  startFrom: 2
 --- !u!1 &900601251
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,10 +830,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 5
   spawnRate: 10
   maxCount: 5
-  startFrom: 0
+  startFrom: 2
 --- !u!1001 &1429108042
 Prefab:
   m_ObjectHideFlags: 0
@@ -917,10 +920,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 6
   spawnRate: 8
   maxCount: 5
-  startFrom: 0
+  startFrom: 1
 --- !u!1 &1602262433
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,10 +966,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 6
   spawnRate: 7
   maxCount: 5
-  startFrom: 0
+  startFrom: 1
 --- !u!1 &1624145282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 5
   spawnRate: 15
   maxCount: 5
@@ -1361,6 +1367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab:
   - {fileID: 400000, guid: 87e912ba994025949af8dd1a35284520, type: 2}
+  usePrefabTransform: 0
   minSpawnRate: 6
   spawnRate: 8
   maxCount: 5
