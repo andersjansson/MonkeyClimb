@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Extensions;
+using Controllers.Main;
 
 /// <summary>
 /// Parallax scrolling script that should be assigned to a layer (Unfinished class)
@@ -65,6 +66,8 @@ public class LayerScroller : MonoBehaviour
 	
 	void Update()
 	{
+		if(GameController.Pause) return;
+
 		Vector3 movement = new Vector3(
 			this.speed.x * this.direction.x,
 			this.speed.y * this.direction.y,

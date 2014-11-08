@@ -767,7 +767,10 @@ MonoBehaviour:
   - {fileID: 400000, guid: 31d27eac70a2ccc43bc9b617749133d2, type: 2}
   - {fileID: 400000, guid: b149bb67e9470ec4a989e883f0a27978, type: 2}
   - {fileID: 400000, guid: 723b52f38d4bafd4f8c996b1c5e41902, type: 2}
-  - {fileID: 400000, guid: 82ec307cc4db5fa4195d93479a80725d, type: 2}
+  - {fileID: 400000, guid: 80362dd74179ffb498129db746d4bf44, type: 2}
+  - {fileID: 400000, guid: 5119340ec0470494d83d5e2306027cbc, type: 2}
+  - {fileID: 400000, guid: 1447d9755ed71504c96bb1d90857fbb3, type: 2}
+  - {fileID: 400000, guid: 9d28d2a918ca54c478a71c14fbbf8dfa, type: 2}
   usePrefabTransform: 1
   minSpawnRate: 3
   spawnRate: 5

@@ -50,6 +50,7 @@ namespace Controllers.Main
 		void Update()
 		{
 			bool pauseButton = false;
+			pauseButton |= Input.GetButtonDown("Pause");
 			pauseButton |= Input.GetButtonDown("Exit");
 			pauseButton |= Input.GetKeyDown(KeyCode.Escape);
 			pauseButton |= Input.GetKeyDown(KeyCode.Menu);
@@ -68,10 +69,12 @@ namespace Controllers.Main
 
 				Time.timeScale = 1;
 				AudioController.PlayIfPaused("BackgroundSound");
+				GameController.Pause = false;
 				if(this.paused)
 				{
-					Time.timeScale = 0;
+					//Time.timeScale = 0;
 					AudioController.Pause("BackgroundSound");
+					GameController.Pause = true;
 				}
 			}
 		}

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Utilities;
 using System.Threading;
+using Controllers.Main;
 
 namespace Controllers
 {
@@ -58,15 +59,11 @@ namespace Controllers
 
 		void Update()
 		{
-			
-			bool pause = false;
-			pause |= Input.GetButtonDown("Pause");
-			
-			if(pause)
+			this.spawner.pause = false;
+			if(GameController.Pause)
 			{
-				this.spawner.pause = !spawner.pause;
+				this.spawner.pause = true;
 			}
-
 		}
 
 		private float randomSpawnRate()

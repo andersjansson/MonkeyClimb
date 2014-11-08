@@ -7,7 +7,7 @@ namespace Controllers.Main
 	public class GameController : MonoBehaviour
 	{
 		public static Collider2D LevelCollider {get;private set;}
-		public static bool GameOver{get;set;}
+		public static bool Pause{get;set;}
 
 		public const int LEVEL_LEFT 	= 0;
 		public const int LEVEL_CENTER 	= 1;

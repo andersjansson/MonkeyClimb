@@ -30,18 +30,23 @@ namespace Controllers.Main
 		// Update is called once per frame
 		void Update ()
 		{
-			if(ReadyController.Ready && this.color.a > 0f)
+			this.timer.pause = false;
+			if(GameController.Pause) this.timer.pause = true;
+			else
 			{
-				this.color.a -= 1f * Time.deltaTime;
-				//this.readyStatusLabel.fontSizeRatio *= this.readyColor.a/4f;
-				
-				this.readyLabel.style.normal.textColor = this.color;
-				this.readyStatusLabel.style.normal.textColor = this.color;
-				
-				if(this.color.a <= 0f)
+				if(ReadyController.Ready && this.color.a > 0f)
 				{
-					this.readyLabel.enabled = false;
-					this.readyStatusLabel.enabled = false;
+					this.color.a -= 1f * Time.deltaTime;
+					//this.readyStatusLabel.fontSizeRatio *= this.readyColor.a/4f;
+					
+					this.readyLabel.style.normal.textColor = this.color;
+					this.readyStatusLabel.style.normal.textColor = this.color;
+					
+					if(this.color.a <= 0f)
+					{
+						this.readyLabel.enabled = false;
+						this.readyStatusLabel.enabled = false;
+					}
 				}
 			}
 		}

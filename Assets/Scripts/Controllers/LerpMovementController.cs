@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using Controllers.Main;
 
 namespace Controllers
 {
@@ -87,6 +88,8 @@ namespace Controllers
 
 		void FixedUpdate()
 		{
+			if(GameController.Pause) return;
+
 			if(this.IsLerping)
 			{
 				float timeSinceStarted = Time.time - this.timeStartedLerping;
