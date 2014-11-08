@@ -72,9 +72,9 @@ namespace Controllers.Main
 				GameController.Pause = false;
 				if(this.paused)
 				{
-					//Time.timeScale = 0;
 					AudioController.Pause("BackgroundSound");
 					GameController.Pause = true;
+					Time.timeScale = 0;
 				}
 			}
 		}
