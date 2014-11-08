@@ -765,8 +765,8 @@ MonoBehaviour:
   spawnPrefab:
   - {fileID: 400000, guid: 11e911308cbbbf141bfdf8ead31d13f3, type: 2}
   - {fileID: 400000, guid: 31d27eac70a2ccc43bc9b617749133d2, type: 2}
-  - {fileID: 400000, guid: b149bb67e9470ec4a989e883f0a27978, type: 2}
   - {fileID: 400000, guid: 723b52f38d4bafd4f8c996b1c5e41902, type: 2}
+  - {fileID: 400000, guid: b149bb67e9470ec4a989e883f0a27978, type: 2}
   - {fileID: 400000, guid: 80362dd74179ffb498129db746d4bf44, type: 2}
   - {fileID: 400000, guid: 5119340ec0470494d83d5e2306027cbc, type: 2}
   - {fileID: 400000, guid: 1447d9755ed71504c96bb1d90857fbb3, type: 2}
@@ -775,7 +775,7 @@ MonoBehaviour:
   minSpawnRate: 3
   spawnRate: 5
   maxCount: 2
-  startFrom: 0
+  startFrom: 3
 --- !u!1 &432216400
 GameObject:
   m_ObjectHideFlags: 0
