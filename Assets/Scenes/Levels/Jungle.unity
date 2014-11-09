@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiDepth: 1
-  title: Menu
+  title: Monkey Climb
   fontSizeRatio: .100000001
   textOffsetRatio: {x: 0, y: .0500000007}
   style:
