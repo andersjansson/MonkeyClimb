@@ -17,6 +17,8 @@ namespace Controllers.Main
 
 		void Start ()
 		{
+			ReadyController.Ready = false;
+
 			var labelObject = GameObject.Find ("GUI/Ready/ReadyLabel");
 			this.readyLabel = labelObject.GetComponent<LabelController>();
 			

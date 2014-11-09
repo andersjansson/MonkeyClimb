@@ -8,6 +8,7 @@ namespace Controllers.Main
 	{
 		public static Collider2D LevelCollider {get;private set;}
 		public static bool Pause{get;set;}
+		public static bool GameOver{get;set;}
 
 		public const int LEVEL_LEFT 	= 0;
 		public const int LEVEL_CENTER 	= 1;
@@ -18,6 +19,9 @@ namespace Controllers.Main
 
 		void Start ()
 		{
+			GameController.Pause = false;
+			GameController.GameOver = false;
+
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		}
 
@@ -68,6 +72,15 @@ namespace Controllers.Main
 
 				if(Application.isLoadingLevel) return;
 				Application.LoadLevel(name); 
+			});
+		}
+
+		public static void LoadLevel(int index)
+		{
+			CameraFade.StartAlphaFade( Color.black, false, 0.5f, 0f, () => { 
+				
+				if(Application.isLoadingLevel) return;
+				Application.LoadLevel(index); 
 			});
 		}
 

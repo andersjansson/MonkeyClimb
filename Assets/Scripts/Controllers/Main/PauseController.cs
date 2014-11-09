@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Controllers.Main;
 
 namespace Controllers.Main
 {
@@ -33,6 +32,9 @@ namespace Controllers.Main
 					{
 						switch(item.name)
 						{
+							case "ButtonRestart":
+								buttonController.OnClick = this.Restart;
+								break;
 							case "ButtonMainMenu":
 								buttonController.OnClick = this.MainMenu;
 								break;
@@ -49,6 +51,23 @@ namespace Controllers.Main
 
 		void Update()
 		{
+			if(GameOverController.ShowGameOver)
+			{
+				this.paused = false;
+				return;
+			}
+
+			if(GameController.GameOver && !GameOverController.ShowGameOver)
+			{
+				if(!this.paused)
+				{
+					this.paused = true;
+					this.Pause();
+				}
+
+				return;
+			}
+
 			bool pauseButton = false;
 			pauseButton |= Input.GetButtonDown("Pause");
 			pauseButton |= Input.GetButtonDown("Exit");
@@ -58,24 +77,7 @@ namespace Controllers.Main
 			if(pauseButton)
 			{
 				this.paused = !paused;
-				foreach (GameObject item in this.menuObjects)
-				{
-					item.SetActive(false);
-					if(this.paused)
-					{
-						item.SetActive(true);
-					}
-				}
-
-				Time.timeScale = 1;
-				AudioController.PlayIfPaused("BackgroundSound");
-				GameController.Pause = false;
-				if(this.paused)
-				{
-					AudioController.Pause("BackgroundSound");
-					GameController.Pause = true;
-					Time.timeScale = 0;
-				}
+				this.Pause();
 			}
 		}
 
@@ -91,11 +93,40 @@ namespace Controllers.Main
 			}
 		}
 
+		private void Pause()
+		{
+			foreach (GameObject item in this.menuObjects)
+			{
+				item.SetActive(false);
+				if(this.paused)
+				{
+					item.SetActive(true);
+				}
+			}
+			
+			Time.timeScale = 1;
+			AudioController.PlayIfPaused("BackgroundSound");
+			GameController.Pause = false;
+			if(this.paused)
+			{
+				AudioController.Pause("BackgroundSound");
+				GameController.Pause = true;
+				Time.timeScale = 0;
+			}
+		}
+
 		private void MainMenu()
 		{
 			Time.timeScale = 1;
 			AudioController.Stop("BackgroundSound");
 			GameController.LoadLevel("MainMenu");
+		}
+
+		private void Restart()
+		{
+			Time.timeScale = 1;
+			AudioController.Stop("BackgroundSound");
+			GameController.LoadLevel (Application.loadedLevel);
 		}
 	}
 }

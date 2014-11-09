@@ -44,7 +44,8 @@ namespace Controllers
 			if (obstacle != null)
 			{
 				Destroy(otherCollider.gameObject);
-				Debug.Log("FOUND!");
+				GameOverController.ShowGameOver = true;
+				Debug.Log("FOUND! - Test Game Over.");
 			}
 		}
 	}
