@@ -2940,9 +2940,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPrefab:
-  - {fileID: 400000, guid: 054fc20148b096748b77a23817017d01, type: 2}
+  - {fileID: 400000, guid: f7b9edd1e8c0f1e4aabae2dd702bf14d, type: 2}
+  - {fileID: 400000, guid: 7ba47f7baa536f1469f199859f21b99d, type: 2}
+  - {fileID: 400000, guid: 3467f97553166234c99d868603c752cd, type: 2}
   usePrefabTransform: 1
-  minSpawnRate: 0
+  minSpawnRate: 1
   spawnRate: 3
   maxCount: 1
   startFrom: -1

@@ -17,7 +17,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Coconut
+  m_Name: CoconutLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .136925921, y: 0, z: 0, w: .990581334}
-  m_LocalPosition: {x: -.25, y: 1.55999994, z: -11}
+  m_LocalPosition: {x: -.600000024, y: 1.62, z: -11}
   m_LocalScale: {x: .100000001, y: .109999999, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}
