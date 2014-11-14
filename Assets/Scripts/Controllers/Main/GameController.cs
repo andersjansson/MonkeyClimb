@@ -6,6 +6,8 @@ namespace Controllers.Main
 {	
 	public class GameController : MonoBehaviour
 	{
+		public static float speedScale = 1.0f;
+
 		public static Collider2D LevelCollider {get;private set;}
 		public static bool Pause{get;set;}
 		public static bool GameOver{get;set;}

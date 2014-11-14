@@ -72,8 +72,10 @@ public class LayerScroller : MonoBehaviour
 			this.speed.x * this.direction.x,
 			this.speed.y * this.direction.y,
 			0);
-		
+
+		movement *= GameController.speedScale;
 		movement *= Time.deltaTime;
+
 		this.transform.Translate(movement);
 		
 		if (this.isLinkedToCamera)

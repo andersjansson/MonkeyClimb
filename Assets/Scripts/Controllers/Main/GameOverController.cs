@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 namespace Controllers.Main
 {
 	public class GameOverController : MonoBehaviour
 	{
+		private ScoreController score;
+
 		public int guiDepth = 1000;
 		public Color colorOverlay;
 		public GameObject[] menuObjects;
@@ -15,8 +18,14 @@ namespace Controllers.Main
 		private bool displayingGameOver;
 		public static bool ShowGameOver{get;set;}
 
+		private LabelController scoreValue; 
+		private LabelController bestValue; 
+
 		void Start ()
 		{
+			var player = GameObject.FindGameObjectWithTag ("Player");
+			this.score = player.GetComponent<ScoreController>();
+
 			this.displayingGameOver = false;
 			GameOverController.ShowGameOver = false;
 
@@ -41,6 +50,15 @@ namespace Controllers.Main
 								break;
 						}
 					}
+				}
+
+				if(item.name == "ScoreValue")
+				{
+					this.scoreValue = item.GetComponent<LabelController>();
+				}
+				else if(item.name == "BestValue")
+				{
+					this.bestValue = item.GetComponent<LabelController>();
 				}
 				
 				item.SetActive(false);
@@ -67,7 +85,20 @@ namespace Controllers.Main
 					item.SetActive(true);
 				}
 
+
+				this.score.labelObject.SetActive(false);
 				this.displayingGameOver = true;
+
+				float bestScore = PlayerPrefs.GetFloat("bestScore");
+				if(bestScore == 0f || bestScore < this.score.Points)
+				{
+					bestScore = this.score.Points;
+				}
+
+				PlayerPrefs.SetFloat("bestScore",bestScore);
+
+				this.scoreValue.title = String.Format("{0} Meters",(int) this.score.Points);
+				this.bestValue.title = String.Format("{0} Meters",(int) bestScore);
 			}
 		}
 
