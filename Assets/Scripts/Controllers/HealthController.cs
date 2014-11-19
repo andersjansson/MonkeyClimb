@@ -43,8 +43,13 @@ namespace Controllers
 			ObstacleController obstacle = otherCollider.gameObject.GetComponent<ObstacleController>();
 			if (obstacle != null)
 			{
+				var health = otherCollider.gameObject.GetComponent<HealthController>();
+				if(this.isEnemy && health.isEnemy) return;
+
 				Destroy(otherCollider.gameObject);
+				this.Damage(1);
 				GameOverController.ShowGameOver = true;
+				AudioController.Play("FXSound",7);
 				Debug.Log("FOUND! - Test Game Over.");
 			}
 		}

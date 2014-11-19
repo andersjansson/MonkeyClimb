@@ -12,12 +12,12 @@ GameObject:
   - 23: {fileID: 2300000}
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
-  - 114: {fileID: 11400006}
-  - 114: {fileID: 11400004}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: CoconutRight
+  m_Name: CoconutCenterLane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .136925921, y: 0, z: 0, w: .990581334}
-  m_LocalPosition: {x: .600000024, y: 1.62, z: -11}
-  m_LocalScale: {x: .100000001, y: .109999999, z: .100000001}
+  m_LocalPosition: {x: 0, y: 1.62, z: -11}
+  m_LocalScale: {x: .100000001, y: .109999992, z: .099999994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,9 +71,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: .100000001
+  m_GravityScale: .0500000007
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -96,26 +96,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd01aa5ae797f454e9a1fc02100744fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fde2231aa5a43b48bebe941e9004f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotate: 1
 --- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f12b455a3b48ee1429423f06d9574a5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 100000, guid: 1d76d186148d0cb4dab38073b02a94eb, type: 2}
-  targetPlayer: 1
-  speed: {x: 1, y: 1}
-  direction: {x: -1, y: 0}
-  gravity: 1
---- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,6 +113,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   isEnemy: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12b455a3b48ee1429423f06d9574a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetPlayer: 0
+  speed: {x: 1, y: 1}
+  direction: {x: 0, y: 0}
+  gravity: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,10 +137,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fde2231aa5a43b48bebe941e9004f9b, type: 3}
+  m_Script: {fileID: 11500000, guid: fd01aa5ae797f454e9a1fc02100744fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

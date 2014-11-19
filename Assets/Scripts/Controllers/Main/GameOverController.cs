@@ -101,6 +101,7 @@ namespace Controllers.Main
 				{
 					bestScore = this.score.Points;
 					newHighScore = true;
+					PlayerPrefs.SetFloat("bestScore",bestScore);
 				}
 
 				foreach (GameObject item in this.menuObjects)
@@ -112,7 +113,7 @@ namespace Controllers.Main
 				}
 
 
-				PlayerPrefs.SetFloat("bestScore",bestScore);
+
 
 				this.scoreValue.title = String.Format("{0} Meters",(int) this.score.Points);
 				this.bestValue.title = String.Format("{0} Meters",(int) bestScore);

@@ -45,12 +45,17 @@ namespace Controllers
 				this.target = GameObject.FindGameObjectWithTag("Player");
 			}
 
+			this.UpdateDirection();
+		}
+
+		public void UpdateDirection()
+		{
 			if(this.target != null)
 			{
 				this.direction = (this.target.transform.position - this.transform.position).normalized;
 				this.direction.x = this.direction.x * this.speed.x;
 				this.direction.y = this.direction.y * this.speed.y;
-
+				
 				this.transform.LookAt(target.transform);
 			}
 		}

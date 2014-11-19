@@ -34,7 +34,7 @@ namespace Controllers.Main
 			var endPos 		= GameController.GetLevelPos(movetype,this.gameObject);
 			var centerPos	= GameController.GetLevelPos(GameController.LEVEL_CENTER,this.gameObject);
 
-			this.movement.timeTakenDuringLerp = 0.5f;
+			this.movement.timeTakenDuringLerp = 0.3f;
 
 			if(this.lastHorizontalMoveType != GameController.LEVEL_CENTER && this.lastHorizontalMoveType != movetype)
 			{
@@ -60,7 +60,7 @@ namespace Controllers.Main
 			var endPos 		= GameController.GetLevelPos(movetype,this.gameObject);
 			var middlePos	= GameController.GetLevelPos(GameController.LEVEL_MIDDLE,this.gameObject);
 
-			this.movement.timeTakenDuringLerp = 1f;
+			this.movement.timeTakenDuringLerp = 0.3f;
 			if(this.lastVerticalMoveType != GameController.LEVEL_MIDDLE && this.lastVerticalMoveType != movetype)
 			{
 				this.movement.StartLerp(middlePos,true,() => {

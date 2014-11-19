@@ -7,6 +7,7 @@ namespace Controllers.Main
 	public class ObstacleController : MonoBehaviour
 	{
 		private MovementController movement;
+		public bool rotate;
 		
 		void Start()
 		{
@@ -23,7 +24,8 @@ namespace Controllers.Main
 			}
 			else
 			{
-				this.transform.RotateAround(this.renderer.bounds.center,Vector3.forward,this.movement.speed.y*400f*Time.deltaTime);
+				if(this.rotate)
+					this.transform.RotateAround(this.renderer.bounds.center,Vector3.forward,this.movement.speed.y*400f*Time.deltaTime);
 			}
 		}
 	}

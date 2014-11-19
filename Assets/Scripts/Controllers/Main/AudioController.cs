@@ -29,6 +29,8 @@ namespace Controllers.Main
 				
 				AudioController.Set("BackgroundSound",true);
 				AudioController.Set("ButtonSound");
+				AudioController.Set("EventSound");
+				AudioController.Set("FXSound");
 			}
 		}
 
