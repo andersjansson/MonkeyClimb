@@ -20,9 +20,12 @@ namespace Controllers.Main
 
 		private LabelController scoreValue; 
 		private LabelController bestValue; 
+		private LabelController bestValueOnly; 
 
 		void Start ()
 		{
+			//PlayerPrefs.DeleteAll ();
+
 			var player = GameObject.FindGameObjectWithTag ("Player");
 			this.score = player.GetComponent<ScoreController>();
 
@@ -51,14 +54,23 @@ namespace Controllers.Main
 						}
 					}
 				}
-
-				if(item.name == "ScoreValue")
+				else if(item.name == "Scores")
 				{
-					this.scoreValue = item.GetComponent<LabelController>();
+					foreach (Transform scoreItem in item.transform)
+					{
+						if(scoreItem.gameObject.name == "ScoreValue")
+						{
+							this.scoreValue = scoreItem.gameObject.GetComponent<LabelController>();
+						}
+						else if(scoreItem.gameObject.name == "BestValue")
+						{
+							this.bestValue = scoreItem.gameObject.GetComponent<LabelController>();
+						}
+					}
 				}
-				else if(item.name == "BestValue")
+				else if(item.gameObject.name == "BestValueOnly")
 				{
-					this.bestValue = item.GetComponent<LabelController>();
+					this.bestValueOnly = item.GetComponent<LabelController>();
 				}
 				
 				item.SetActive(false);
@@ -80,25 +92,31 @@ namespace Controllers.Main
 			{
 				GameController.Pause = true;
 				GameController.GameOver = true;
-				foreach (GameObject item in this.menuObjects)
-				{
-					item.SetActive(true);
-				}
-
-
 				this.score.labelObject.SetActive(false);
 				this.displayingGameOver = true;
 
+				bool newHighScore = false;
 				float bestScore = PlayerPrefs.GetFloat("bestScore");
 				if(bestScore == 0f || bestScore < this.score.Points)
 				{
 					bestScore = this.score.Points;
+					newHighScore = true;
 				}
+
+				foreach (GameObject item in this.menuObjects)
+				{
+					if(newHighScore && item.name == "Scores") continue;
+					if(!newHighScore && (item.name == "BestTextOnly" || item.name == "BestValueOnly")) continue;
+
+					item.SetActive(true);
+				}
+
 
 				PlayerPrefs.SetFloat("bestScore",bestScore);
 
 				this.scoreValue.title = String.Format("{0} Meters",(int) this.score.Points);
 				this.bestValue.title = String.Format("{0} Meters",(int) bestScore);
+				this.bestValueOnly.title = String.Format("{0} Meters",(int) bestScore);
 			}
 		}
 
