@@ -24,7 +24,7 @@ namespace Controllers.Main
 
 		void Start ()
 		{
-			PlayerPrefs.DeleteAll ();
+			//PlayerPrefs.DeleteAll ();
 
 			var player = GameObject.FindGameObjectWithTag ("Player");
 			this.score = player.GetComponent<ScoreController>();
