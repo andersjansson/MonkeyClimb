@@ -24,7 +24,7 @@ namespace Controllers.Main
 
 		void Start ()
 		{
-			//PlayerPrefs.DeleteAll ();
+			PlayerPrefs.DeleteAll ();
 
 			var player = GameObject.FindGameObjectWithTag ("Player");
 			this.score = player.GetComponent<ScoreController>();
@@ -99,6 +99,7 @@ namespace Controllers.Main
 				float bestScore = PlayerPrefs.GetFloat("bestScore");
 				if(bestScore == 0f || bestScore < this.score.Points)
 				{
+					AudioController.Play("FXSound",6);
 					bestScore = this.score.Points;
 					newHighScore = true;
 					PlayerPrefs.SetFloat("bestScore",bestScore);
